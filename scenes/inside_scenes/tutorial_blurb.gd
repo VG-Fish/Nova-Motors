@@ -34,7 +34,8 @@ func _process(delta):
 		visible = true
 	elif SceneSwitcher.get_scene_shown() != get_parent().scene_file_path:
 		visible = false
-	calculate_center()
+	if not not_in_tutorial:
+		calculate_center()
 
 func calculate_center() -> void:
 	# To get correct size
