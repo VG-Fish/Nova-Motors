@@ -42,7 +42,8 @@ func _on_next_char_timeout():
 	if (current_char < len(messages[current_message])):
 		var next_char = messages[current_message][current_char]
 		display += next_char
-		label.text = display
+		if label:
+			label.text = display
 		current_char += 1
 	else:
 		$next_char.stop()

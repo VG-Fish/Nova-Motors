@@ -42,4 +42,6 @@ func get_scene_shown() -> String:
 	for s in scenes:
 		if s.visible:
 			return s.scene_file_path
-	return get_tree().current_scene.scene_file_path
+	if get_tree().current_scene:
+		return get_tree().current_scene.scene_file_path
+	return ""
