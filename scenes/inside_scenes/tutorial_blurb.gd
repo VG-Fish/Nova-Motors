@@ -20,6 +20,9 @@ var not_in_tutorial: bool = true
 @onready var background: PanelContainer = $Background
 @onready var view_port_size: Vector2 = Vector2(get_viewport().size)
 
+func _ready():
+	add_child(dialogue)
+
 func ready_dialogue() -> void:
 	dialogue.label = employee_info
 	message[0].replace("\n", "")
@@ -29,11 +32,12 @@ func _process(delta):
 	if SceneSwitcher.get_scene_shown() == get_parent().scene_file_path and not_in_tutorial:
 		ready_dialogue()
 		start_dialogue()
-		add_child(dialogue)
 		not_in_tutorial = false
 		visible = true
 	elif SceneSwitcher.get_scene_shown() != get_parent().scene_file_path:
-		visible = false
+		dialogue.clear_text()
+		dialogue.start_dialogue()
+		not_in_tutorial = true
 	if not not_in_tutorial:
 		calculate_center()
 
