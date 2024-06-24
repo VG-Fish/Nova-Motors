@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://heiwyq8knbct"]
+
+[ext_resource type="PackedScene" uid="uid://d0qt1pyanlfv4" path="res://interactables/interactable.tscn" id="1_ejpoi"]
+[ext_resource type="Script" path="res://interactables/factory_control_machine.gd" id="2_uffpa"]
+
+[node name="Factory Control Machine" instance=ExtResource("1_ejpoi")]
+script = ExtResource("2_uffpa")
+
+[node name="PointLight2D" parent="." index="3"]
+energy = 2.0

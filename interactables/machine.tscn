@@ -1,0 +1,79 @@
+[gd_scene load_steps=14 format=3 uid="uid://bqhifpfsx5gqp"]
+
+[ext_resource type="PackedScene" uid="uid://d0qt1pyanlfv4" path="res://interactables/interactable.tscn" id="1_a1f5g"]
+[ext_resource type="Script" path="res://interactables/machine.gd" id="2_dp70i"]
+[ext_resource type="Texture2D" uid="uid://vl422bny5rtx" path="res://Assets/ALL OTHER ASSETS/sprite_0.png" id="2_q6haa"]
+[ext_resource type="Texture2D" uid="uid://bk1jh52wtml7b" path="res://Assets/ALL OTHER ASSETS/sprite_1.png" id="3_y6ukr"]
+[ext_resource type="Texture2D" uid="uid://dvn04nd0ic6d7" path="res://Assets/ALL OTHER ASSETS/sprite_2.png" id="4_j2cqj"]
+[ext_resource type="Texture2D" uid="uid://774u2vnrt1m8" path="res://Assets/ALL OTHER ASSETS/sprite_3.png" id="5_oc8pi"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6rbv5"]
+texture = ExtResource("2_q6haa")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x35e3"]
+texture = ExtResource("3_y6ukr")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mljtn"]
+texture = ExtResource("4_j2cqj")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r730i"]
+texture = ExtResource("5_oc8pi")
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_2rkf3"]
+sources/0 = SubResource("TileSetAtlasSource_6rbv5")
+sources/1 = SubResource("TileSetAtlasSource_x35e3")
+sources/2 = SubResource("TileSetAtlasSource_mljtn")
+sources/3 = SubResource("TileSetAtlasSource_r730i")
+
+[sub_resource type="Animation" id="Animation_g2neq"]
+resource_name = "up_and_down"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(8.5, -25), Vector2(8.5, -35), Vector2(8.5, -25)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vf8jj"]
+_data = {
+"up_and_down": SubResource("Animation_g2neq")
+}
+
+[node name="Machine" instance=ExtResource("1_a1f5g")]
+script = ExtResource("2_dp70i")
+
+[node name="Object" parent="Object Collision Area" index="0"]
+tile_set = SubResource("TileSet_2rkf3")
+layer_0/tile_data = PackedInt32Array(0, 3, 0, -65536, 0, 0)
+
+[node name="CollisionPolygon2D" parent="Object Collision Area" index="1"]
+polygon = PackedVector2Array(0, 16, 16, 16, 16, -1, 15, -1, 15, -2, 14, -2, 14, -6, 13, -6, 13, -7, 11, -7, 11, -8, 9, -8, 9, -9, 7, -9, 7, -8, 5, -8, 5, -7, 3, -7, 3, -6, 2, -6, 2, -2, 1, -2, 1, -1, 0, -1)
+
+[node name="Arrow" parent="." index="1"]
+position = Vector2(8.5, -25)
+scale = Vector2(0.5, 0.5)
+
+[node name="AnimationPlayer" parent="." index="2"]
+libraries = {
+"": SubResource("AnimationLibrary_vf8jj")
+}
+
+[node name="Ignore Meter" parent="." index="4"]
+offset_left = 24.0
+offset_top = -14.0
+offset_right = 324.0
+offset_bottom = 16.0
+rotation = -1.58108
+scale = Vector2(0.0792229, 0.278384)

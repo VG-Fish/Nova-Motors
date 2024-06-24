@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dojosbq3b5hon"]
+
+[ext_resource type="PackedScene" uid="uid://ednwuftto6d1" path="res://interactables/door.tscn" id="1_hub4b"]
+[ext_resource type="Script" path="res://interactables/office_door.gd" id="2_t1yq3"]
+[ext_resource type="Texture2D" uid="uid://dl3gb1j5wevf7" path="res://Assets/ALL OTHER ASSETS/office.png" id="3_vjgde"]
+
+[node name="Door" instance=ExtResource("1_hub4b")]
+script = ExtResource("2_t1yq3")
+
+[node name="Object" parent="." index="0"]
+texture_filter = 1
+texture = ExtResource("3_vjgde")
+region_enabled = true
+region_rect = Rect2(208, 99, 32, 29)
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(-0.5, -0.212615)
+scale = Vector2(1.02924, 0.964564)
+
+[node name="PointLight2D" parent="." index="3"]
+position = Vector2(1, 3)

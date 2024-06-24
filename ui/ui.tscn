@@ -1,0 +1,107 @@
+[gd_scene load_steps=8 format=3 uid="uid://bbcodlaxvj7m3"]
+
+[ext_resource type="Script" path="res://ui/ui.gd" id="1_wox7n"]
+[ext_resource type="Texture2D" uid="uid://c2sdurefai3cf" path="res://Assets/Icons/Team.png" id="3_bx01l"]
+[ext_resource type="Theme" uid="uid://dqdpb1lan45tv" path="res://ui/ui.tres" id="3_kqerf"]
+[ext_resource type="Texture2D" uid="uid://dfld7lsiuge1u" path="res://Assets/Icons/Flower2.png" id="3_ue43m"]
+[ext_resource type="Texture2D" uid="uid://5x13b31omafn" path="res://Assets/Icons/Car.png" id="5_7tuub"]
+[ext_resource type="Texture2D" uid="uid://bgol4krny24qr" path="res://Assets/Icons/Cash2.png" id="6_mhilg"]
+[ext_resource type="Texture2D" uid="uid://f5ey8dp86nky" path="res://Assets/Icons/Eye.png" id="7_2f4y1"]
+
+[node name="UI" type="CanvasLayer"]
+layer = 100
+visible = false
+script = ExtResource("1_wox7n")
+
+[node name="Timer" type="MarginContainer" parent="."]
+anchors_preset = -1
+anchor_left = 0.9
+anchor_right = 1.0
+offset_left = -93.0
+offset_bottom = 10.0
+grow_horizontal = 0
+size_flags_horizontal = 8
+
+[node name="PanelContainer" type="PanelContainer" parent="Timer"]
+layout_mode = 2
+theme = ExtResource("3_kqerf")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Timer/PanelContainer"]
+layout_mode = 2
+theme = ExtResource("3_kqerf")
+
+[node name="Timer" type="Label" parent="Timer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+text = "Turns Left: "
+
+[node name="Label" type="Label" parent="Timer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+text = "1"
+
+[node name="Stats" type="MarginContainer" parent="."]
+offset_right = 30.0
+offset_bottom = 100.0
+scale = Vector2(1.75, 1.75)
+size_flags_horizontal = 0
+theme = ExtResource("3_kqerf")
+
+[node name="Panel" type="PanelContainer" parent="Stats"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Stats/Panel"]
+layout_mode = 2
+
+[node name="Employee Friendliness" type="HBoxContainer" parent="Stats/Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Stats/Panel/VBoxContainer/Employee Friendliness"]
+layout_mode = 2
+texture = ExtResource("3_bx01l")
+
+[node name="Label" type="Label" parent="Stats/Panel/VBoxContainer/Employee Friendliness"]
+layout_mode = 2
+text = "1"
+
+[node name="Environment Indicators" type="HBoxContainer" parent="Stats/Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Stats/Panel/VBoxContainer/Environment Indicators"]
+layout_mode = 2
+texture = ExtResource("3_ue43m")
+
+[node name="Label" type="Label" parent="Stats/Panel/VBoxContainer/Environment Indicators"]
+layout_mode = 2
+text = "1"
+
+[node name="Product Quality" type="HBoxContainer" parent="Stats/Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Stats/Panel/VBoxContainer/Product Quality"]
+layout_mode = 2
+texture = ExtResource("5_7tuub")
+
+[node name="Label" type="Label" parent="Stats/Panel/VBoxContainer/Product Quality"]
+layout_mode = 2
+text = "1"
+
+[node name="Profit" type="HBoxContainer" parent="Stats/Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Stats/Panel/VBoxContainer/Profit"]
+layout_mode = 2
+texture = ExtResource("6_mhilg")
+
+[node name="Label" type="Label" parent="Stats/Panel/VBoxContainer/Profit"]
+layout_mode = 2
+text = "1"
+
+[node name="Public Relations" type="HBoxContainer" parent="Stats/Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Stats/Panel/VBoxContainer/Public Relations"]
+layout_mode = 2
+texture = ExtResource("7_2f4y1")
+
+[node name="Label" type="Label" parent="Stats/Panel/VBoxContainer/Public Relations"]
+layout_mode = 2
+text = "1"

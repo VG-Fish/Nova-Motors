@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://ednwuftto6d1"]
+
+[ext_resource type="Script" path="res://interactables/door.gd" id="1_tglm8"]
+[ext_resource type="Texture2D" uid="uid://kcm4xchx8hjw" path="res://Assets/Lights/circle.png" id="1_yfrgo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ruu8r"]
+size = Vector2(31, 28.5878)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_n2j11"]
+radius = 36.1248
+
+[node name="Door" type="Node2D"]
+script = ExtResource("1_tglm8")
+
+[node name="Object" type="Sprite2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_ruu8r")
+
+[node name="Action Layout" type="Node2D" parent="."]
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+energy = 0.5
+texture = ExtResource("1_yfrgo")
+texture_scale = 0.5
+
+[node name="Area2D2" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+shape = SubResource("CircleShape2D_n2j11")
+
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
+[connection signal="body_entered" from="Area2D2" to="." method="_on_area_2d_2_body_entered"]
+[connection signal="body_exited" from="Area2D2" to="." method="_on_area_2d_2_body_exited"]

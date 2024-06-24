@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dfqx1bl3xe7ve"]
+
+[ext_resource type="Script" path="res://scenes/inside_scenes/factory.gd" id="1_tbdf4"]
+[ext_resource type="Texture2D" uid="uid://b7av4ijfhcr50" path="res://Assets/ALL OTHER ASSETS/nature dead.png" id="2_bji64"]
+
+[node name="Factory" type="Node2D"]
+script = ExtResource("1_tbdf4")
+
+[node name="Backgrounds" type="Node2D" parent="."]
+texture_filter = 1
+
+[node name="Main Background" type="Sprite2D" parent="Backgrounds"]
+texture = ExtResource("2_bji64")

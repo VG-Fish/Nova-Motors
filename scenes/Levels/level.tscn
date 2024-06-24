@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://bvqghfq06n6pl"]
+
+[ext_resource type="Script" path="res://scenes/Levels/level.gd" id="1_t32wd"]
+[ext_resource type="PackedScene" uid="uid://i2xgqm83u615" path="res://player/player.tscn" id="2_fmwco"]
+[ext_resource type="Texture2D" uid="uid://bpx0cialcxe4v" path="res://icon.svg" id="2_subn0"]
+[ext_resource type="PackedScene" uid="uid://bbcodlaxvj7m3" path="res://ui/ui.tscn" id="3_3mcwy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xjq4d"]
+size = Vector2(21, 1159)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sopr5"]
+size = Vector2(22, 1151)
+
+[node name="Level" type="Node2D" groups=["Persist"]]
+script = ExtResource("1_t32wd")
+
+[node name="Backgrounds" type="Node2D" parent="."]
+
+[node name="Main Background" type="Sprite2D" parent="Backgrounds"]
+scale = Vector2(14.0547, 8.21875)
+texture = ExtResource("2_subn0")
+
+[node name="Lights" type="Node2D" parent="."]
+
+[node name="Non Interactables" type="Node2D" parent="."]
+
+[node name="Interactables" type="Node2D" parent="."]
+
+[node name="Scenes" type="Node2D" parent="."]
+
+[node name="Bounds" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bounds"]
+position = Vector2(-897, -42)
+shape = SubResource("RectangleShape2D_xjq4d")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Bounds"]
+position = Vector2(901, -23)
+shape = SubResource("RectangleShape2D_sopr5")
+
+[node name="Player" parent="." instance=ExtResource("2_fmwco")]
+position = Vector2(0, 2.08165e-12)
+
+[node name="UI" parent="." instance=ExtResource("3_3mcwy")]

@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://c6ilj3838vwew"]
+
+[ext_resource type="PackedScene" uid="uid://bvdxur8cwviae" path="res://actions/Base/action.tscn" id="1_m6flp"]
+[ext_resource type="Script" path="res://actions/Base/close.gd" id="2_h1r1k"]
+
+[node name="Close" instance=ExtResource("1_m6flp")]
+script = ExtResource("2_h1r1k")
+
+[node name="Button" parent="PanelContainer/VBoxContainer" index="1"]
+text = "Close"

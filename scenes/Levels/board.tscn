@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://cco0u2ollkyj8"]
+
+[ext_resource type="PackedScene" uid="uid://bvqghfq06n6pl" path="res://scenes/Levels/level.tscn" id="1_dgva8"]
+[ext_resource type="Script" path="res://scenes/Levels/board.gd" id="2_h064s"]
+[ext_resource type="Texture2D" uid="uid://cfgsy2crs8tck" path="res://Assets/ALL OTHER ASSETS/board back.png" id="3_3fn24"]
+[ext_resource type="Texture2D" uid="uid://cnrdwh28ugawb" path="res://Assets/ALL OTHER ASSETS/board front.png" id="4_rrigf"]
+
+[node name="Board" groups=["Level"] instance=ExtResource("1_dgva8")]
+script = ExtResource("2_h064s")
+
+[node name="Backgrounds" parent="." index="0"]
+position = Vector2(1080, 2.08165e-12)
+
+[node name="Main Background" parent="Backgrounds" index="0"]
+texture_filter = 1
+position = Vector2(-537.744, 360.812)
+scale = Vector2(4.2176, 5.01649)
+texture = ExtResource("3_3fn24")
+region_enabled = true
+region_rect = Rect2(1, 9, 255, 144)
+
+[node name="Board Front" type="Sprite2D" parent="Backgrounds" index="1"]
+texture_filter = 1
+position = Vector2(-539, 333)
+scale = Vector2(4.218, 5.016)
+texture = ExtResource("4_rrigf")
+
+[node name="CollisionShape2D" parent="Bounds" index="0"]
+position = Vector2(-18, 301)
+
+[node name="CollisionShape2D2" parent="Bounds" index="1"]
+position = Vector2(1090, 371)
+
+[node name="Player" parent="." index="6"]
+visible = false

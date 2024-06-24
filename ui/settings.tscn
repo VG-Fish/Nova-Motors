@@ -1,0 +1,184 @@
+[gd_scene load_steps=5 format=3 uid="uid://bm2kpaksf872w"]
+
+[ext_resource type="Theme" uid="uid://dqdpb1lan45tv" path="res://ui/ui.tres" id="1_0hi0k"]
+[ext_resource type="Script" path="res://ui/settings.gd" id="1_xgx48"]
+[ext_resource type="Texture2D" uid="uid://vod7vwhkmqhg" path="res://Assets/Icons/SpeakerMute.png" id="3_q5m0r"]
+[ext_resource type="PackedScene" uid="uid://dnqnr0xw4vjtk" path="res://ui/Input Settings/input_settings.tscn" id="4_yuvc6"]
+
+[node name="Settings" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_0hi0k")
+script = ExtResource("1_xgx48")
+
+[node name="Panel" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TabContainer" type="TabContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+
+[node name="Sound" type="TabBar" parent="TabContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Sound"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.15
+anchor_top = 0.4
+anchor_right = 0.7
+anchor_bottom = 0.5
+offset_left = -66.0
+offset_top = -40.0
+offset_right = 66.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.25, 1.25)
+theme_override_constants/separation = 20
+
+[node name="Mute" type="VBoxContainer" parent="TabContainer/Sound/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Sound/VBoxContainer/Mute"]
+layout_mode = 2
+text = "Mute  Sound?"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Sound/VBoxContainer/Mute"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="TextureRect" type="TextureRect" parent="TabContainer/Sound/VBoxContainer/Mute/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_q5m0r")
+
+[node name="Mute" type="CheckButton" parent="TabContainer/Sound/VBoxContainer/Mute/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Background Music Slider" type="VBoxContainer" parent="TabContainer/Sound/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Sound/VBoxContainer/Background Music Slider"]
+layout_mode = 2
+text = "Background Music Sound Slider"
+
+[node name="Sound" type="HSlider" parent="TabContainer/Sound/VBoxContainer/Background Music Slider"]
+layout_mode = 2
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[node name="Sound Effects Slider" type="VBoxContainer" parent="TabContainer/Sound/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Sound/VBoxContainer/Sound Effects Slider"]
+layout_mode = 2
+text = "Sound Effects Volume Slider"
+
+[node name="SFX" type="HSlider" parent="TabContainer/Sound/VBoxContainer/Sound Effects Slider"]
+layout_mode = 2
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[node name="Text" type="TabBar" parent="TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Text"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.075
+anchor_top = 0.4
+anchor_right = 0.625
+anchor_bottom = 0.45
+offset_left = -39.0
+offset_top = -25.5
+offset_right = 39.0
+offset_bottom = 25.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.5, 1.5)
+theme_override_constants/separation = 20
+
+[node name="Text Font" type="VBoxContainer" parent="TabContainer/Text/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Text/VBoxContainer/Text Font"]
+layout_mode = 2
+text = "Change Font"
+
+[node name="OptionButton" type="OptionButton" parent="TabContainer/Text/VBoxContainer/Text Font"]
+layout_mode = 2
+item_count = 4
+selected = 3
+popup/item_0/text = "Dogica"
+popup/item_0/id = 0
+popup/item_1/text = "Dogica Bold"
+popup/item_1/id = 1
+popup/item_2/text = "Dogica Pixel"
+popup/item_2/id = 2
+popup/item_3/text = "Dogica Pixel Bold"
+popup/item_3/id = 3
+
+[node name="Text Size" type="VBoxContainer" parent="TabContainer/Text/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Text/VBoxContainer/Text Size"]
+layout_mode = 2
+text = "Change Font Size"
+
+[node name="SpinBox" type="SpinBox" parent="TabContainer/Text/VBoxContainer/Text Size"]
+layout_mode = 2
+min_value = 10.0
+max_value = 25.0
+value = 15.0
+
+[node name="Key Binds" type="TabBar" parent="TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Input Settings" parent="TabContainer/Key Binds" instance=ExtResource("4_yuvc6")]
+layout_mode = 1
+
+[node name="Main Menu" type="TabBar" parent="TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Main Menu Button" type="Button" parent="TabContainer/Main Menu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -173.0
+offset_top = -13.0
+offset_right = 173.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+text = " Back to Main Menu?"
+
+[connection signal="pressed" from="TabContainer/Sound/VBoxContainer/Mute/HBoxContainer/Mute" to="." method="_on_mute_pressed"]
+[connection signal="value_changed" from="TabContainer/Sound/VBoxContainer/Background Music Slider/Sound" to="." method="_on_sound_value_changed"]
+[connection signal="value_changed" from="TabContainer/Sound/VBoxContainer/Sound Effects Slider/SFX" to="." method="_on_sfx_value_changed"]
+[connection signal="item_selected" from="TabContainer/Text/VBoxContainer/Text Font/OptionButton" to="." method="_on_option_button_item_selected"]
+[connection signal="value_changed" from="TabContainer/Text/VBoxContainer/Text Size/SpinBox" to="." method="_on_spin_box_value_changed"]
+[connection signal="pressed" from="TabContainer/Main Menu/Main Menu Button" to="." method="_on_main_menu_button_pressed"]

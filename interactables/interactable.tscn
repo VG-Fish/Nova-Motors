@@ -1,0 +1,61 @@
+[gd_scene load_steps=8 format=3 uid="uid://d0qt1pyanlfv4"]
+
+[ext_resource type="Script" path="res://interactables/interactable.gd" id="1_gr1hx"]
+[ext_resource type="Texture2D" uid="uid://bewiaw5guwftg" path="res://Assets/emotes/pipo-popupemotes112.png" id="2_ffqj8"]
+[ext_resource type="Texture2D" uid="uid://kcm4xchx8hjw" path="res://Assets/Lights/circle.png" id="2_rnmr3"]
+[ext_resource type="Texture2D" uid="uid://c1xh1yw22akfw" path="res://Assets/progress_bar/bg.png" id="4_3cctp"]
+[ext_resource type="Texture2D" uid="uid://cja1ix6bnbs8l" path="res://Assets/progress_bar/over.png" id="5_fulag"]
+[ext_resource type="Texture2D" uid="uid://b6qpn814av5de" path="res://Assets/progress_bar/progress.png" id="6_objqu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oio8y"]
+radius = 59.0339
+
+[node name="Interactable" type="Node2D"]
+texture_filter = 1
+script = ExtResource("1_gr1hx")
+
+[node name="Object Collision Area" type="Area2D" parent="."]
+collision_layer = 4
+
+[node name="Object" type="TileMap" parent="Object Collision Area"]
+format = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Object Collision Area"]
+polygon = PackedVector2Array(-1, -1, 1, -1, 0, 1)
+
+[node name="Arrow" type="Sprite2D" parent="."]
+position = Vector2(46, 35)
+texture = ExtResource("2_ffqj8")
+hframes = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Arrow")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+scale = Vector2(0.15, 0.15)
+energy = 0.5
+texture = ExtResource("2_rnmr3")
+
+[node name="Ignore Meter" type="TextureProgressBar" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -153.0
+offset_top = -89.0
+offset_right = 147.0
+offset_bottom = -59.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_under = ExtResource("4_3cctp")
+texture_over = ExtResource("5_fulag")
+texture_progress = ExtResource("6_objqu")
+
+[node name="Action Layout" type="Node2D" parent="."]
+
+[node name="Player Collision Area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player Collision Area"]
+shape = SubResource("CircleShape2D_oio8y")
+
+[connection signal="mouse_entered" from="Object Collision Area" to="." method="_on_object_collision_area_mouse_entered"]
+[connection signal="mouse_exited" from="Object Collision Area" to="." method="_on_object_collision_area_mouse_exited"]

@@ -1,0 +1,240 @@
+[gd_scene load_steps=9 format=3 uid="uid://cmam0qxiaw52j"]
+
+[ext_resource type="Script" path="res://scenes/Menus/create_custom_game.gd" id="1_yhmyu"]
+[ext_resource type="Theme" uid="uid://dqdpb1lan45tv" path="res://ui/ui.tres" id="2_slq0o"]
+[ext_resource type="Texture2D" uid="uid://d3p8ngmbp5prx" path="res://Assets/ALL OTHER ASSETS/menu.png" id="3_1orha"]
+[ext_resource type="Texture2D" uid="uid://dfld7lsiuge1u" path="res://Assets/Icons/Flower2.png" id="3_curv5"]
+[ext_resource type="Texture2D" uid="uid://c2sdurefai3cf" path="res://Assets/Icons/Team.png" id="4_37c2j"]
+[ext_resource type="Texture2D" uid="uid://5x13b31omafn" path="res://Assets/Icons/Car.png" id="6_j6eph"]
+[ext_resource type="Texture2D" uid="uid://bgol4krny24qr" path="res://Assets/Icons/Cash2.png" id="7_hndh5"]
+[ext_resource type="Texture2D" uid="uid://f5ey8dp86nky" path="res://Assets/Icons/Eye.png" id="8_xkvof"]
+
+[node name="Create Custom Game" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_slq0o")
+script = ExtResource("1_yhmyu")
+
+[node name="Panel" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.568627)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_1orha")
+
+[node name="Options" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -388.0
+offset_top = -271.0
+offset_right = 1160.0
+offset_bottom = 265.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.52, 1.0068)
+
+[node name="Amount of Actions" type="VBoxContainer" parent="Options"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Options/Amount of Actions"]
+layout_mode = 2
+text = "Change the amount of actions per required to go to next day. Range is [1, 5] inclusive."
+
+[node name="HSlider" type="HSlider" parent="Options/Amount of Actions"]
+layout_mode = 2
+min_value = 1.0
+max_value = 5.0
+value = 1.0
+rounded = true
+
+[node name="Mode" type="VBoxContainer" parent="Options"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Options/Mode"]
+layout_mode = 2
+text = "Change the difficulty mode."
+
+[node name="OptionButton" type="OptionButton" parent="Options/Mode"]
+layout_mode = 2
+item_count = 3
+selected = 0
+popup/item_0/text = "Easy"
+popup/item_0/id = 0
+popup/item_1/text = "Medium"
+popup/item_1/id = 1
+popup/item_2/text = "Hard"
+popup/item_2/id = 2
+
+[node name="Days Threshold" type="VBoxContainer" parent="Options"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Options/Days Threshold"]
+layout_mode = 2
+text = "Change the maximum amount of days allowed failing the game. Range is [1, 365] inclusive."
+
+[node name="SpinBox" type="SpinBox" parent="Options/Days Threshold"]
+layout_mode = 2
+min_value = 1.0
+max_value = 365.0
+value = 30.0
+rounded = true
+
+[node name="Grade Threshold" type="VBoxContainer" parent="Options"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Options/Grade Threshold"]
+layout_mode = 2
+text = "Change the minimum grade needed for winning the game. Range is [0.01, 1] inclusive."
+
+[node name="SpinBox" type="SpinBox" parent="Options/Grade Threshold"]
+layout_mode = 2
+min_value = 0.01
+max_value = 1.0
+step = 0.01
+value = 0.01
+
+[node name="Stats" type="VBoxContainer" parent="Options"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Options/Stats"]
+layout_mode = 2
+text = "Change the stats you start off with. Range is [-0.5, 1.5] inclusive."
+
+[node name="Employee Friendliness" type="VBoxContainer" parent="Options/Stats"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Options/Stats/Employee Friendliness"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Options/Stats/Employee Friendliness/HBoxContainer"]
+layout_mode = 2
+text = "Employee Friendliness"
+
+[node name="TextureRect" type="TextureRect" parent="Options/Stats/Employee Friendliness/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("4_37c2j")
+
+[node name="SpinBox" type="SpinBox" parent="Options/Stats/Employee Friendliness"]
+layout_mode = 2
+min_value = -0.5
+max_value = 1.5
+step = 0.01
+value = 0.01
+
+[node name="Environment Indicators" type="VBoxContainer" parent="Options/Stats"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Options/Stats/Environment Indicators"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Options/Stats/Environment Indicators/HBoxContainer"]
+layout_mode = 2
+text = "Environment Indicators
+"
+
+[node name="TextureRect" type="TextureRect" parent="Options/Stats/Environment Indicators/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_curv5")
+
+[node name="SpinBox" type="SpinBox" parent="Options/Stats/Environment Indicators"]
+layout_mode = 2
+min_value = -0.5
+max_value = 1.5
+step = 0.01
+value = 0.01
+
+[node name="Product Quality" type="VBoxContainer" parent="Options/Stats"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Options/Stats/Product Quality"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Options/Stats/Product Quality/HBoxContainer"]
+layout_mode = 2
+text = "Product Quality"
+
+[node name="TextureRect" type="TextureRect" parent="Options/Stats/Product Quality/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("6_j6eph")
+
+[node name="SpinBox" type="SpinBox" parent="Options/Stats/Product Quality"]
+layout_mode = 2
+min_value = -0.5
+max_value = 1.5
+step = 0.01
+value = 0.01
+
+[node name="Profit" type="VBoxContainer" parent="Options/Stats"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Options/Stats/Profit"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Options/Stats/Profit/HBoxContainer"]
+layout_mode = 2
+text = "Profit"
+
+[node name="TextureRect" type="TextureRect" parent="Options/Stats/Profit/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("7_hndh5")
+
+[node name="SpinBox" type="SpinBox" parent="Options/Stats/Profit"]
+layout_mode = 2
+min_value = -0.5
+max_value = 1.5
+step = 0.01
+value = 0.01
+
+[node name="Public Relations" type="VBoxContainer" parent="Options/Stats"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Options/Stats/Public Relations"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Options/Stats/Public Relations/HBoxContainer"]
+layout_mode = 2
+text = "Public Relations"
+
+[node name="TextureRect" type="TextureRect" parent="Options/Stats/Public Relations/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("8_xkvof")
+
+[node name="SpinBox" type="SpinBox" parent="Options/Stats/Public Relations"]
+layout_mode = 2
+min_value = -0.5
+max_value = 1.5
+step = 0.01
+value = 0.01
+
+[node name="Create" type="Button" parent="Options"]
+layout_mode = 2
+text = "Create"
+
+[node name="Button" type="Button" parent="Options"]
+layout_mode = 2
+text = "Back"
+
+[connection signal="pressed" from="Options/Create" to="." method="_on_create_pressed"]
+[connection signal="pressed" from="Options/Button" to="." method="_on_button_pressed"]

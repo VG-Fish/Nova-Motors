@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://cxkltj3hv20yu"]
+
+[ext_resource type="Script" path="res://globals/day_change.gd" id="1_cnpri"]
+
+[node name="Control" type="Control"]
+z_index = 100
+layout_mode = 3
+anchors_preset = 0
+mouse_filter = 2
+script = ExtResource("1_cnpri")
+
+[node name="Panel" type="Panel" parent="."]
+modulate = Color(0, 0, 0, 0)
+layout_mode = 0
+offset_right = 1080.0
+offset_bottom = 720.0
+mouse_filter = 2

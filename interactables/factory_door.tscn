@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://dpn64p2exf3wd"]
+
+[ext_resource type="PackedScene" uid="uid://ednwuftto6d1" path="res://interactables/door.tscn" id="1_qdnq6"]
+[ext_resource type="Script" path="res://interactables/factory_door.gd" id="2_4rsd7"]
+[ext_resource type="Texture2D" uid="uid://dl3gb1j5wevf7" path="res://Assets/ALL OTHER ASSETS/office.png" id="3_30cal"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5gthf"]
+size = Vector2(32, 28)
+
+[node name="Door" instance=ExtResource("1_qdnq6")]
+script = ExtResource("2_4rsd7")
+
+[node name="Object" parent="." index="0"]
+texture_filter = 1
+texture = ExtResource("3_30cal")
+region_enabled = true
+region_rect = Rect2(208, 99, 32, 29)
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+shape = SubResource("RectangleShape2D_5gthf")

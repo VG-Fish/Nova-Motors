@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://bk4l532h1dfmt"]
+
+[ext_resource type="PackedScene" uid="uid://bvqghfq06n6pl" path="res://scenes/Levels/level.tscn" id="1_urlgt"]
+[ext_resource type="Script" path="res://scenes/Levels/office.gd" id="2_n6xyq"]
+[ext_resource type="Texture2D" uid="uid://dl3gb1j5wevf7" path="res://Assets/ALL OTHER ASSETS/office.png" id="3_ngte2"]
+[ext_resource type="PackedScene" uid="uid://5t1qcdtoyxj5" path="res://interactables/letter_box.tscn" id="5_hg8x5"]
+[ext_resource type="PackedScene" uid="uid://dojosbq3b5hon" path="res://interactables/office_door.tscn" id="5_hjx3o"]
+[ext_resource type="PackedScene" uid="uid://cvhosqdohvlku" path="res://interactables/office_computer.tscn" id="6_2cavs"]
+
+[node name="Office" groups=["Level"] instance=ExtResource("1_urlgt")]
+position = Vector2(1080, 2.08165e-12)
+script = ExtResource("2_n6xyq")
+
+[node name="Main Background" parent="Backgrounds" index="0"]
+texture_filter = 1
+position = Vector2(-538.5, 359.5)
+scale = Vector2(4.23047, 4.97917)
+texture = ExtResource("3_ngte2")
+
+[node name="Door" parent="Interactables" index="0" instance=ExtResource("5_hjx3o")]
+position = Vector2(-127, 565)
+scale = Vector2(4.5, 5.25)
+
+[node name="Letter Box" parent="Interactables" index="1" instance=ExtResource("5_hg8x5")]
+position = Vector2(-741, 561)
+scale = Vector2(4.7, 4.2)
+
+[node name="Office Computer" parent="Interactables" index="2" instance=ExtResource("6_2cavs")]
+position = Vector2(-606, 567)
+scale = Vector2(4.5, 5.5)
+
+[node name="CollisionShape2D" parent="Bounds" index="0"]
+position = Vector2(-1092, 177)
+
+[node name="CollisionShape2D2" parent="Bounds" index="1"]
+position = Vector2(11, 303)
+
+[node name="Player" parent="." index="6"]
+position = Vector2(-183, 631)
+scale = Vector2(8, 5.581)

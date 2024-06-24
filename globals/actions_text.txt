@@ -1,0 +1,381 @@
+[
+{
+	"Text": "Optimize production line for increased efficiency.",
+	"Type": "Board",
+	"Mode(s)": {"easy": true, "medium": true, "hard": true},
+	 "Stats": {"profit": 0.45}
+  },
+  {
+	"Text": "Conduct market research on electric vehicle trends.",
+	"Type": "Regular",
+	"Mode(s)": {"easy": true, "medium": true, "hard": true},
+	"Stats": {"environment_indicators": 0.05, "profit": -0.15, "product_quality": 0.05}
+  },
+  {
+	"Text": "Negotiate with suppliers for cost reduction, our stock is plummeting",
+	"Type": "Board",
+	"Mode(s)": {"easy": true, "medium": true, "hard": true},
+	"Stats": {"profit": 0.55, "employee_friendliness": -0.5}
+  },
+  {
+	"Text": "Implement a customer loyalty program.",
+	"Type": "Regular",
+	"Mode(s)": {"easy": true, "medium": true, "hard": true},
+	"Stats": {"public_relations": 0.09, "profit": -0.02}
+  },
+  {
+	"Text": "Develop and launch a new car model.",
+	"Type": "Regular",
+	"Mode(s)": {"easy": true, "medium": true, "hard": true},
+	"Stats": {"environment_indicators": -0.15, "profit": 0.15, "product_quality": 0.15}
+  },
+  {
+	"Text": "Implement an employee environment awareness",
+	"Type": "Regular",
+	"Mode(s)": {"easy": true, "medium": true, "hard": true},
+	"Stats": {"environment_indicators": 0.05, "profit": -0.05}
+  },
+  {
+	"Text": "Upgrade factory equipment for energy efficiency.",
+	"Type":"Regular",
+	 "Mode(s)": {"easy": true, "medium": true, "hard": true},
+	"Stats": {"environment_indicators": 0.15, "profit": -0.05}
+  },
+  {
+	"Text": "Launch a social media marketing campaign, resources will be allocated away from employees",
+	"Type": "Board",
+	"Mode(s)": {"easy": true, "medium": true, "hard": true},
+	"Stats": {"public_relations": 0.45, "employee_friendliness": -0.45}
+  },
+  {
+	"Text": "Defend the company though a public speech",
+	"Type": "Board",
+	"Mode(s)": {"easy": true, "medium": true, "hard": true},
+	"Stats": {"public_relations": -0.05,}
+  },
+  {
+	"Text": "Explore opportunities for global market expansion.",
+	"Type": "Regular",
+	"Mode(s)": {"easy": true, "medium": true, "hard": true},
+	"Stats": {"profit": 0.05}
+  },
+
+  {
+	"Text": "EMERGENCY: FIX THE POLLUTION, YOU ARE BEING TAXED HEAVILY FOR IT",
+	"Type": "Regular",
+	"Mode(s)": {"easy": true, "medium": true, "hard": true},
+	"Stats": {"environment_indicators": 0.05, "profit": -0.05}
+  },
+
+  {
+	"Text": "Integrate data analytics tools for decision-making.",
+	"Type": "Regular",
+	"Mode(s)": {"easy": true, "medium": true, "hard": true},
+	"Stats": {"profit": 0.05, "employee_friendliness": 0.15}
+  },
+
+  {
+	"Text": "Design and launch an employee wellness program.",
+	"Type": "Regular",
+	"Mode(s)": {"easy": true, "medium": true, "hard": true},
+	"Stats": {"profit": -0.05, "employee_friendliness": 0.05},
+  },
+
+  {
+	"Text": "Assess and enhance quality control processes.",
+	"Type": "Regular",
+	"Mode(s)": {"easy": true, "medium": true, "hard": true},
+	"Stats": {"product_quality": 0.15}
+  },
+  {
+	"Text": "Implement a marketing strategy for a specific car model.",
+	"Type": "Regular",
+	"Mode(s)": {"easy": true, "medium": true, "hard": true},
+	"Stats": {"product_quality": 0.05, "public_relations": -0.15}
+  },
+  {
+	"Text": "Evaluate and optimize the factory's layout.",
+	"Type": "Regular",
+	"Mode(s)": {"easy": true, "medium": true, "hard": true},
+	"Stats": {"product_quality": 0.25, "employee_friendliness": 0.15}
+  },
+  {
+	"Text": "Deal with company budget cuts, cut employee salary",
+	"Type": "Board",
+	"Mode(s)": {"easy": true, "medium": true, "hard": true},
+	"Stats": {"public_relations": -0.35, "profit": 0.15}
+  },
+
+  {
+	"Text": "Deal with massive company scandal",
+	"Type": "Board",
+	"Mode(s)": {"medium": true, "hard": true},
+	"Stats": {"public_relations": -0.25}
+  },
+
+  {
+	"Text": "Implement a waste reduction program in the factory.",
+	"Type": "Regular",
+	"Mode(s)": {"easy": true, "medium": true, "hard": true},
+	"Stats": {"employee_friendliness": 0.15, "environment_indicators": 0.15}
+  },
+
+  {
+	"Text": "Launch a brand ambassador program for marketing.",
+	"Type": "Marketing",
+	"Mode(s)": {"easy": true, "medium": true, "hard": true},
+	"Stats": {"public_relations": -0.05, "profit": 0.05}
+  },
+
+  {
+	"Text": "Develop and implement a scenario for business continuity.",
+	"Type": "Board",
+	"Mode(s)": {"medium": true, "hard": true},
+	"Stats": {"employee_friendliness": 0.05, "profit": 0.05}
+  },
+
+  {
+	"Text": "Implement blockchain for supply chain transparency.",
+	"Type": "Regular",
+	"Mode(s)": {"easy": true, "medium": true, "hard": true},
+	"Stats": {"employee_friendliness": 0.05, "profit": 0.05}
+  },
+
+  {
+	"Text": "Assess and improve company public image, by showing new green energy",
+	"Type": "Regular",
+	"Mode(s)": {"easy": true, "medium": true, "hard": true},
+	"Stats": {"environment_indicators": 0.25, "profit": -0.15, "public_relations": 0.35}
+  },
+
+  {
+	"Text": "your company is entering a new era, layoffs are necessary",
+	"Type": "Board",
+	"Mode(s)": {"hard": true},
+	"Stats": {"profit": 0.05, "employee_friendliness": -0.15}
+  },
+
+  {
+	"Text": "Conduct ongoing market trend analysis for strategic planning.",
+	"Type": "Board",
+	"Mode(s)": {"hard": true},
+	"Stats": {"profit": 0.25, "employee_friendliness": -0.15}
+  },
+
+  {
+	"Text": "Explore opportunities for employee cross-training.",
+	"Type": "Regular",
+	"Mode(s)": {"easy": true, "medium": true, "hard": true},
+	"Stats": {"employee_friendliness": 0.15, "profit": -0.15}
+  },
+
+  {
+
+	"Text": "Ask employees to implement cost-effective advertising campaigns.",
+	"Type": "Regular",
+	"Mode(s)": {"easy": true, "medium": true, "hard": true},
+	"Stats": {"profit": 0.05, "employee_friendliness": -0.05}
+  },
+
+  {
+	"Text": "Research and implement advanced automation in the production line.",
+	"Type": "Regular",
+	"Mode(s)": {"easy": true, "medium": true, "hard": true},
+	"Stats": { "profit": 0.05, "product_quality": 0.05}
+  },
+
+  {
+	"Text": "Conduct a safety audit and enhance workplace safety protocols.",
+	"Type": "Regular",
+	"Mode(s)": {"easy": true, "medium": true, "hard": true},
+	"Stats": {"profit": 0.15, "employee_friendliness": -0.35}
+  },
+
+   {
+	"Text": "Optimize inventory management for raw materials and finished products.",
+	"Type": "Regular",
+	"Mode(s)": {"easy": true, "medium": true, "hard": true},
+	"Stats": {"profit": 0.05, "product_quality": 0.25}
+  },
+  {
+	"Text": "Develop and launch a sustainability initiative for eco-friendly production.",
+	"Type": "Regular",
+	"Mode(s)": {"easy": true, "medium": true, "hard": true},
+	"Stats": {"environment_indicators": -0.05, "public_relations": -0.15}
+  },
+  {
+	"Text": "Initiate a cost analysis for each production stage and identify cost-saving opportunities.",
+	"Type": "Regular",
+	"Mode(s)": {"easy": true, "medium": true, "hard": true},
+	"Stats": {"profit": 0.25}
+  },
+  {
+	"Text": "Create and implement a mentorship program for employee skill development.",
+	"Type": "Regular",
+	"Mode(s)": {"easy": true, "medium": true, "hard": true},
+	"Stats": {"profit": 0.15, "employee_friendliness": -0.05}
+  },
+  {
+	"Text": "Upgrade factory facilities to meet environmental standards and regulations.",
+	"Type": "Regular",
+	"Mode(s)": {"easy": true, "medium": true, "hard": true},
+	"Stats": {"profit": 0.25, "employee_friendliness": -0.05}
+  },
+
+  {
+	"Text": "Launch a company charity event",
+	"Type": "Regular",
+	"Mode(s)": {"easy": true, "medium": true, "hard": true},
+	"Stats": {"profit": 0.25,  "public_relations": -0.15}
+  },
+
+  {
+	"Text": "Conduct market segmentation analysis to identify niche markets for product targeting.",
+	"Type": "Regular",
+	"Mode(s)": {"easy": true, "medium": true, "hard": true},
+	"Stats": { "profit": -0.25, }
+  },
+
+  {
+	"Text": "Implement a real-time customer feedback system to enhance product quality.",
+	"Type": "Regular",
+	"Mode(s)": {"easy": true, "medium": true, "hard": true},
+	"Stats": { "public_relations": -0.15,  "employee_friendliness": -0.05}
+  },
+
+  {
+	"Text": "Investigate inefficiencies in company",
+	"Type": "Regular",
+	"Mode(s)": {"easy": true, "medium": true, "hard": true},
+	"Stats": {"profit": 0.09, "employee_friendliness": -0.04}
+  },
+
+  {
+	"Text": "Optimize machinery based on data analytics insights.",
+	"Type": "Regular",
+	"Mode(s)": {"easy": true, "medium": true, "hard": true},
+	"Stats": {"profit": -0.06, "product_quality": 0.08}
+  },
+
+  {
+	"Text": "Conduct market segmentation analysis to identify niche markets for product targeting.",
+	"Type": "Regular",
+	"Mode(s)": {"medium": true, "hard": true}, 
+	"Stats": { "profit": -0.15, }
+  },
+  {
+	"Text": "Implement a real-time customer feedback system to enhance product quality.",
+	"Type": "Regular",
+	"Mode(s)": {"medium": true, "hard": true},
+	"Stats": { "public_relations": -0.05,  "employee_friendliness": -0.25}
+  },
+  {
+	"Text": "Investigate inefficiencies among managers in company",
+	"Type": "Board",
+	"Mode(s)": {"medium": true, "hard": true},
+	"Stats": {"profit": -0.35, "employee_friendliness": -0.45}
+  },
+  {
+	"Text": "Optimize machinery based on data analytics insights.",
+	"Type": "Regular",
+	"Mode(s)": {"medium": true, "hard": true},
+	"Stats": {"profit": 0.05, "product_quality": 0.05}
+  },
+
+  {
+	"Text": "Investigate and adopt new technologies for product design and development.",
+	"Type": "Regular",
+	"Mode(s)": {"medium": true, "hard": true},
+	"Stats": {"profit": 0.05, "product_quality": 0.05}
+  },
+  {
+	"Text": "Develop and launch a better customer UI program to boost repeat business.",
+	"Type": "Regular",
+	"Mode(s)": {"medium": true, "hard": true},
+	"Stats": {"public_relations": 0.25, "employee_friendliness": 0.05}
+  },
+  {
+	"Text": "Implement new (expensive) software for the engineering department..",
+	"Type": "Regular",
+	"Mode(s)": {"medium": true, "hard": true},
+	"Stats": {"profit": -0.05, "employee_friendliness": 0.25}
+  },
+  {
+	"Text": "Optimize the use of new, stronger, expensive materials to improve product sustainability.",
+	"Type": "Regular",
+	"Mode(s)": {"medium": true, "hard": true},
+	"Stats": {"profit": -0.05,  "product_quality": 0.05}
+  },
+  {
+	"Text": "Explore strategic partnerships for joint marketing and product development.",
+	"Type": "Regular",
+	"Mode(s)": {"medium": true, "hard": true},
+	"Stats": {"profit": -0.05, "employee_friendliness": -0.25}
+  },
+  {
+	"Text": "Implement a crisis management plan to address unforeseen challenges.",
+	"Type": "Regular",
+	"Mode(s)": {"medium": true, "hard": true},
+	"Stats": {"profit": -0.05, "employee_friendliness": 0.25}
+  },
+  {
+	"Text": "Upgrade factory security measures to protect sensitive information and assets.",
+	"Type": "Regular",
+	"Mode(s)": {"hard": true},
+	"Stats": {"profit": -0.05, "employee_friendliness": 0.25}
+  },
+  {
+	"Text": "Launch a brand refresh campaign to update the company's image and messaging.",
+	"Type": "Regular",
+	"Mode(s)": {"hard": true},
+	"Stats": {"profit": -0.15, "public_relations": 0.05}
+  },
+  {
+	"Text": "Launch a employee mental wellness seminar",
+	"Type": "Regular",
+	"Mode(s)": {"hard": true},
+	"Stats": {"profit": -0.15, "employee_friendliness": 0.25}
+  },
+  {
+	"Text": "Explore opportunities for international market expansion and adapt strategies accordingly.",
+	"Type": "Regular",
+	"Mode(s)": {"hard": true},
+	"Stats": {"profit": -0.05}
+  },
+{
+	"Text": "Partner with a famous celebrity, who endorses your car",
+	"Type": "Regular",
+	"Mode(s)": {"hard": true},
+	"Stats": {"public_relations": 0.25, "profit": 0.05}
+  },
+  {
+	"Text": "Conduct an analysis to identify strengths, weaknesses, opportunities, and threats.",
+	"Type": "Regular",
+	"Mode(s)": {"hard": true},
+	"Stats": {"profit": 0.05, "product_quality": 0.05}
+  },
+  {
+	"Text": "Implement a flexible work schedule to accommodate diverse employee needs.",
+	"Type": "Regular",
+	"Mode(s)": {"hard": true},
+	"Stats": {"profit": 0.05, "employee_friendliness": 0.25}
+  },
+  {
+	"Text": "Optimize online presence through ads on the internet.",
+	"Type": "Regular",
+	"Mode(s)": {"hard": true},
+	"Stats": {"profit":-0.15, "public_relations": 0.25}
+  },
+  {
+	"Text": "Implement predictive analytics for demand forecasting to prevent overstock or shortages.",
+	"Type": "Regular",
+	"Mode(s)": {"hard": true},
+	"Stats": {"profit":-0.15,}
+  },
+  {
+	"Text": "Initiate a mentorship program for leadership development within the organization.",
+	"Type": "Regular",
+	"Mode(s)": {"hard": true},
+	"Stats": {"profit": -0.05, "employee_friendliness": 0.25}
+  }
+]

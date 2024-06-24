@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://bvc58u6ti6cro"]
+
+[ext_resource type="Script" path="res://actions/Base/action_layout.gd" id="1_vg2wi"]
+
+[node name="Actions" type="Control"]
+z_index = 2
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_vg2wi")
+
+[node name="Background" type="PanelContainer" parent="."]
+layout_mode = 1
+offset_right = 1.0
+offset_bottom = 27.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Background"]
+layout_mode = 2
+
+[node name="Text" type="Label" parent="Background/VBoxContainer"]
+layout_mode = 2
+
+[node name="Options" type="VBoxContainer" parent="Background/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1

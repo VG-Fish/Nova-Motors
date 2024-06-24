@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://dt2c2eyvlcara"]
+
+[ext_resource type="PackedScene" uid="uid://bvc58u6ti6cro" path="res://actions/Base/action_layout.tscn" id="1_l4hba"]
+[ext_resource type="Script" path="res://actions/Base/board_actions.gd" id="2_t5lp5"]
+[ext_resource type="Theme" uid="uid://dqdpb1lan45tv" path="res://ui/ui.tres" id="3_51afm"]
+
+[node name="Actions" instance=ExtResource("1_l4hba")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+script = ExtResource("2_t5lp5")
+
+[node name="Background" parent="." index="0"]
+offset_bottom = 20.0
+
+[node name="VBoxContainer" parent="Background" index="0"]
+theme = ExtResource("3_51afm")

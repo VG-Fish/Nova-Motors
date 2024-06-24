@@ -1,0 +1,92 @@
+[gd_scene load_steps=4 format=3 uid="uid://bboy6lx6uyuda"]
+
+[ext_resource type="Script" path="res://scenes/inside_scenes/computer.gd" id="1_crrje"]
+[ext_resource type="PackedScene" uid="uid://cqmuw74qu24g2" path="res://scenes/inside_scenes/stock_screen.tscn" id="2_2amp8"]
+
+[sub_resource type="VideoStreamTheora" id="VideoStreamTheora_0tdn3"]
+file = "res://Assets/audio/Touhou-Bad-Apple.ogv"
+
+[node name="Computer" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_crrje")
+
+[node name="Computer Tabs" type="TabContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Customer Reviews" type="TabBar" parent="Computer Tabs"]
+layout_mode = 2
+
+[node name="Reviews" type="VBoxContainer" parent="Computer Tabs/Customer Reviews"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Company Stock" type="TabBar" parent="Computer Tabs"]
+visible = false
+layout_mode = 2
+
+[node name="Stock Screen" parent="Computer Tabs/Company Stock" instance=ExtResource("2_2amp8")]
+layout_mode = 1
+
+[node name="Bad Apple" type="TabBar" parent="Computer Tabs"]
+visible = false
+layout_mode = 2
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="Computer Tabs/Bad Apple"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -240.0
+offset_top = -184.0
+offset_right = 240.0
+offset_bottom = 184.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = SubResource("VideoStreamTheora_0tdn3")
+autoplay = true
+expand = true
+
+[node name="Log Out" type="TabBar" parent="Computer Tabs"]
+visible = false
+layout_mode = 2
+
+[node name="Button" type="Button" parent="Computer Tabs/Log Out"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 4.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Log Off Computer?"
+
+[node name="Space Bar Timer" type="Timer" parent="."]
+wait_time = 0.05
+one_shot = true
+
+[connection signal="tab_changed" from="Computer Tabs" to="." method="_on_computer_tabs_tab_changed"]
+[connection signal="pressed" from="Computer Tabs/Log Out/Button" to="." method="_on_button_pressed"]
+[connection signal="timeout" from="Space Bar Timer" to="." method="_on_space_bar_timer_timeout"]
