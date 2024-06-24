@@ -15,14 +15,10 @@ var message: Array[String] = [
 	To play the game, use A and D to move to the left and right, left click to click on objects, and P or ESC to access the pause menu. \
 	You can click on doors to go to other rooms. Your progress will automatically be saved."
 ]
+var not_in_tutorial: bool = true
 @onready var employee_info: Label = $Background/VBoxContainer/Text
 @onready var background: PanelContainer = $Background
 @onready var view_port_size: Vector2 = Vector2(get_viewport().size)
-
-func _ready() -> void:
-	ready_dialogue()
-	start_dialogue()
-	add_child(dialogue)
 
 func ready_dialogue() -> void:
 	dialogue.label = employee_info
@@ -30,6 +26,14 @@ func ready_dialogue() -> void:
 	dialogue.change_message(message)
 
 func _process(delta):
+	if SceneSwitcher.get_scene_shown() == get_parent().scene_file_path and not_in_tutorial:
+		ready_dialogue()
+		start_dialogue()
+		add_child(dialogue)
+		not_in_tutorial = false
+		visible = true
+	elif SceneSwitcher.get_scene_shown() != get_parent().scene_file_path:
+		visible = false
 	calculate_center()
 
 func calculate_center() -> void:
@@ -37,7 +41,6 @@ func calculate_center() -> void:
 	background.global_position = Vector2.ZERO
 	
 	background.global_position = abs((background.size - view_port_size) / 2)
-	print(background.global_position)
 
 func restart_dialogue() -> void:
 	$Background/VBoxContainer/Text.text = ""
