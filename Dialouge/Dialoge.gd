@@ -18,7 +18,8 @@ var read_time = 2
 var current_message = 0
 var display = ""
 var current_char = 0
-
+# To control whether to delete dialogue after finishing.
+var delete: bool = true
 @onready var label: Label 
 
 func _ready():
@@ -33,10 +34,8 @@ func start_dialogue():
 	$next_char.autostart = true
 
 func stop_dialogue():
-	queue_free()
-
-func clear_text() -> void:
-	$Label.text = ""
+	if delete:
+		queue_free()
 
 func _on_next_char_timeout():
 	if (current_char < len(messages[current_message])):
@@ -49,7 +48,7 @@ func _on_next_char_timeout():
 		$next_char.stop()
 		$next_message.one_shot = true
 		$next_message.set_wait_time(read_time)
-		$next_message.start()	
+		$next_message.start()
 
 func _on_next_message_timeout():
 	if (current_message == len(messages) - 1):
@@ -63,3 +62,7 @@ func _on_next_message_timeout():
 func change_message(message: Array[String]) -> void:
 	messages = message
 	
+func _notification(what: int) -> void:
+	match what:
+		NOTIFICATION_PREDELETE:
+			print(get_parent().name)

@@ -21,11 +21,11 @@ var not_in_tutorial: bool = true
 @onready var view_port_size: Vector2 = Vector2(get_viewport().size)
 
 func _ready():
+	dialogue.delete = false
 	add_child(dialogue)
 
 func ready_dialogue() -> void:
 	dialogue.label = employee_info
-	message[0].replace("\n", "")
 	dialogue.change_message(message)
 
 func _process(delta):
@@ -35,8 +35,7 @@ func _process(delta):
 		not_in_tutorial = false
 		visible = true
 	elif SceneSwitcher.get_scene_shown() != get_parent().scene_file_path:
-		dialogue.clear_text()
-		dialogue.start_dialogue()
+		clear_dialogue()
 		not_in_tutorial = true
 	if not not_in_tutorial:
 		calculate_center()
@@ -47,7 +46,7 @@ func calculate_center() -> void:
 	
 	background.global_position = abs((background.size - view_port_size) / 2)
 
-func restart_dialogue() -> void:
+func clear_dialogue() -> void:
 	$Background/VBoxContainer/Text.text = ""
 
 func start_dialogue() -> void:
