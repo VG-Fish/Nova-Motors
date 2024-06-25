@@ -31,6 +31,7 @@ UI="*res://ui/ui.tscn"
 BackgroundMusic="*res://Assets/audio/background_music.tscn"
 SceneSwitcher="*res://globals/SceneSwitcher.gd"
 DayChange="*res://globals/day_change.tscn"
+WinLoseScreen="*res://scenes/win_lose_screen.tscn"
 
 [display]
 

@@ -26,7 +26,7 @@ var days_since_start: int = 0:
 		day_changed.emit()
 		DayChange.play_animation()
 		if days_since_start >= DAYS_THRESHOLD:
-			fail()
+			lose()
 			
 var amount_of_actions: int = 3:
 	set(value):
@@ -53,10 +53,6 @@ enum action_type {placeholder = -1, board = 2, regular = 4}
 var texts: Array[Dictionary] = []
 var DAYS_THRESHOLD: int = 365
 var GRADE_THRESHOLD: float = 90
-var grades: Dictionary = {0.97: "A+", 0.93: "A", 0.9: "A-", 0.87: "B+", 
-	0.83: "B", 0.8: "B-", 0.77: "C+", 0.73: "C", 0.7: "C-", 0.67: "D+",
-	0.63: "D", 0.6: "D-"
-}
 var current_game: int 
 
 # Customer Review Related
@@ -124,32 +120,18 @@ func load_config_file(file_name: String, passcode: String) -> void:
 
 
 # When player fails the game after passing DAYS_THRESHOLD
-func fail() -> void:
-	#var format_displayed_grade: String = "You got an %s."
-	#var displayed_grade = format_displayed_grade % evaluate_grade()
-	# TODO: Immplement the rest
-	pass
+func lose() -> void:
+	WinLoseScreen.lose()
 
 
 # When player wins the game after passing GRADE_THRESHOLD
 func win() -> void:
-	# First: Ask to continue playing
-	# Second: do this
-	#var format_displayed_grade: String = "You got an %s."
-	#var displayed_grade = format_displayed_grade % evaluate_grade()
-	#UI.optional_continue(displayed_grade)
+	WinLoseScreen.lose()
 
 	TrackOfGames.leaderboard_counter += 1
 	TrackOfGames.leaderboard.append([TrackOfGames.leaderboard_counter, GRADE])
 	SaveGame.save_track_of_games()
 
-
-func evaluate_grade() -> String:
-	for number_grade in grades:
-		if GRADE >= number_grade:
-			return grades[number_grade]
-	return "F"
-	
 
 func update_grade() -> float:
 	var res: float = 0.0
@@ -158,7 +140,7 @@ func update_grade() -> float:
 		res += value * 0.2
 	return res
 
-	
+
 func calculate_stock_price(time_type: CALCULATE_TYPE) -> float:
 	noise.noise_type = FastNoiseLite.TYPE_VALUE
 	var sum: float = 0.0
