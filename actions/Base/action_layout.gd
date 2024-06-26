@@ -48,6 +48,7 @@ func make_actions() -> void:
 		options.add_child(pot_action)
 
 func close(type: String) -> void:
+	get_parent().get_parent().reset_zoom()
 	if type == "close":
 		visible = false
 	else:

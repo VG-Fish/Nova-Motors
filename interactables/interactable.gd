@@ -9,6 +9,7 @@ var actions_scene: PackedScene = preload("res://actions/Base/action_layout.tscn"
 var has_action: bool = true
 var format_actions_text: String = "You have %s days left."
 var mouse_in_area: bool = false
+var zoom_level: int = 2
 
 # Days Related
 var days_elasped: int = 0
@@ -34,19 +35,28 @@ func calculate_center() -> void:
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("primary action") and mouse_in_area and has_action:
 		actions.visible = !actions.visible
-		var zoom_level: int = 2
 		camera.zoom *= zoom_level
-		var view_port_size: Vector2 = get_viewport_rect().size / zoom_level
-		var new_viewport_size: Vector2 = view_port_size / 2
+		var viewport_size: Vector2 = get_viewport_rect().size / zoom_level
+		var center_viewport_size: Vector2 = viewport_size / 2
 		
-		new_viewport_size.y *= -1
-		camera.offset = global_position + new_viewport_size
-		if camera.offset.y > view_port_size.y:
-			camera.offset.y -= (camera.offset.y - view_port_size.y)
-		if view_port_size.x > camera.offset.x:
-			camera.offset.x -= (camera.offset.x  - view_port_size.x)
-			
+		# Move camera
+		center_viewport_size.y *= -1
+		# INFO: move camera offset to the center of the viewport size.
+		camera.offset = global_position + center_viewport_size
+		if camera.offset.y > viewport_size.y:
+			camera.offset.y -= (camera.offset.y - viewport_size.y)
+		if viewport_size.x > camera.offset.x:
+			camera.offset.x -= (camera.offset.x  - viewport_size.x)
 		
+		# Move actions
+		actions.scale /= zoom_level
+		center_viewport_size.y *= -1
+		actions.global_position = global_position - actions.get_action_size() / 4
+
+func reset_zoom() -> void:
+	actions.scale *= zoom_level
+	camera.zoom /= zoom_level
+	camera.offset = Vector2(1080, 0)
 
 func finish_action() -> void:
 	has_action = false
