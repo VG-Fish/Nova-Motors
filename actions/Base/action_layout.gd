@@ -35,7 +35,6 @@ func make_actions() -> void:
 						random_action = interactable_specific_actions[randi_range(0, 2)]
 					"Employee":
 						random_action = interactable_specific_actions[randi_range(3, 7)]
-				print(random_action.Text)
 			while (
 				previous_actions_text.find(random_action) == -1 and
 				random_action["Mode(s)"].get(Globals.mode, false) and
