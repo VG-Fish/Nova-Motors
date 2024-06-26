@@ -5,6 +5,7 @@ var not_added: bool = true
 @onready var employee_info: Label = $Background/VBoxContainer/Text
 @onready var background: PanelContainer = $Background
 @onready var view_port_size: Vector2 = Vector2(get_viewport().size)
+var interactable_name: String
 
 func _ready():
 	dialogue.label = employee_info

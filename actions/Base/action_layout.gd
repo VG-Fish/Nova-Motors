@@ -7,12 +7,10 @@ var close_action_scene: PackedScene = preload("res://actions/Base/close.tscn")
 var previous_actions_text: Array[Dictionary] = []
 var action_type: String
 var actions: Array[VBoxContainer] = []
-var interactable_name: String
 @onready var options: VBoxContainer = $Background/VBoxContainer/Options
 signal action_done
-# for special machine specific actions text
-var use_special_action: bool = false
-var machine_specific_actions: Array = str_to_var(FileAccess.open("res://actions/machine_actions_text.txt", FileAccess.READ).get_as_text())
+var use_special_action: bool = true
+var interactable_specific_actions: Array = str_to_var(FileAccess.open("res://actions/machine_actions_text.txt", FileAccess.READ).get_as_text())
 var machine_action_text: String
 
 func _ready() -> void:
@@ -29,7 +27,15 @@ func make_actions() -> void:
 			pot_action = action_scene.instantiate()
 			var random_action: Dictionary = get_action()
 			if i == 2 and use_special_action:
-				random_action = machine_specific_actions[randi_range(0, machine_specific_actions.size() - 1)]
+				var interactable_type: String = get_parent().get_parent().name.rstrip("23456789")
+				match interactable_type:
+					"Letter Box":
+						random_action = interactable_specific_actions[randi_range(8, len(interactable_specific_actions) - 1)]
+					"Machine":
+						random_action = interactable_specific_actions[randi_range(0, 2)]
+					"Employee":
+						random_action = interactable_specific_actions[randi_range(3, 7)]
+				print(random_action.Text)
 			while (
 				previous_actions_text.find(random_action) == -1 and
 				random_action["Mode(s)"].get(Globals.mode, false) and

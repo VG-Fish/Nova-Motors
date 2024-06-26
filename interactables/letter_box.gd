@@ -1,6 +1,5 @@
 extends Interactable
 
-
 func _process(delta: float) -> void:
 	if not has_action:
 		$AnimationPlayer.stop()

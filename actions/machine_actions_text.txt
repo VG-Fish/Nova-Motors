@@ -1,12 +1,6 @@
 [
 {
-	"Text": "Perform maintenance on manufacturing machines in order to get an estimated 0.1% - 4.3% efficiency in manufacturing line.",
-	"Type": "Machine",
-	"Mode(s)": {"easy": true, "medium": true, "hard": true},
-	 "Stats": {"profit": 0.25, "product_quality": 0.5}
-},
-{
-	"Text": "Employee an additional 10 people to survey the machines.",
+	"Text": "Employ an additional 10 people to survey the machines.",
 	"Type": "Machine",
 	"Mode(s)": {"easy": true, "medium": true, "hard": true},
 	"Stats": {"profit": -0.2, "employee_friendliness": 0.15}
@@ -15,18 +9,54 @@
 	"Text": "Integrate AI to prevent failed products.",
 	"Type": "Machine",
 	"Mode(s)": {"easy": true, "medium": true, "hard": true},
-	 "Stats": {"profit": 0.25, "employee_friendliness": -0.3, "product_quality": 0.2}
+	"Stats": {"profit": 0.25, "employee_friendliness": -0.3, "product_quality": 0.2}
 },
 {
 	"Text": "Repair and enhance a machine to replace the engine labelers.",
 	"Type": "Machine",
 	"Mode(s)": {"easy": true, "medium": true, "hard": true},
-	 "Stats": {"profit": 0.9, "employee_friendliness": -0.75, "public_relations": -0.5, "environment_indicators": 0.1, "product_quality": 0.05}
+	"Stats": {"profit": 0.9, "employee_friendliness": -0.75, "public_relations": -0.5, "environment_indicators": 0.1, "product_quality": 0.05}
 },
 {
-	"Text": "Do not renew the contract with machine manufacturer, employ new privately contracted engineers.",
-	"Type": "Machine",
+	"Text": "Fire all of your employees.",
+	"Type": "Employees",
 	"Mode(s)": {"easy": true, "medium": true, "hard": true},
-	 "Stats": {"profit": 0.45, "employee_friendliness": 0.3}
-}
+	"Stats": {"profit": 5, "employee_friendliness": -5, "public_relations": -5, "product_quality": -5}
+},
+{
+	"Text": "Employee salary by 3%, and the height of where other companies are employing, budget cuts.",
+	"Type": "Employees",
+	"Mode(s)": {"easy": true, "medium": true, "hard": true},
+	"Stats": {"employee_friendliness": 0.6, "profit": -0.1}
+},
+{
+	"Text": "Cut healthcare.",
+	"Type": "Employees",
+	"Mode(s)": {"easy": true, "medium": true, "hard": true},
+	"Stats": {"employee_friendliness": -0.5, "profit": 0.9}
+},
+{
+	"Text": "Throw a pizza party for your employees as morale is very low.",
+	"Type": "Employees",
+	"Mode(s)": {"easy": true, "medium": true, "hard": true},
+	"Stats": {"employee_friendliness": 0.5, "profit": -0.05}
+},
+{
+	"Text": "Employ pay cut.",
+	"Type": "Employees",
+	"Mode(s)": {"easy": true, "medium": true, "hard": true},
+	"Stats": {"employee_friendliness": -0.2, "profit": 0.5}
+},
+{
+	"Text": "claim a free 100k from a successful defamation lawsuit.",
+	"Type": "Mailbox",
+	"Mode(s)": {"easy": true, "medium": true, "hard": true},
+	"Stats": {"profit": 0.6}
+},
+{
+	"Text": "Accept criticism from a famous, elderly, racing enthusiast.",
+	"Type": "Mailbox",
+	"Mode(s)": {"easy": true, "medium": true, "hard": true},
+	"Stats": {"profit": -0.1, "public_relations": 0.5}
+},
 ]
