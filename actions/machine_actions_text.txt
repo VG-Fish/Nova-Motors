@@ -1,0 +1,32 @@
+[
+{
+	"Text": "Perform maintenance on manufacturing machines in order to get an estimated 0.1% - 4.3% efficiency in manufacturing line.",
+	"Type": "Machine",
+	"Mode(s)": {"easy": true, "medium": true, "hard": true},
+	 "Stats": {"profit": 0.45}
+},
+{
+	"Text": "Employee an additional 500 people to survey the machines.",
+	"Type": "Machine",
+	"Mode(s)": {"easy": true, "medium": true, "hard": true},
+	"Stats": {"profit": 0.45}
+},
+{
+	"Text": "Integrate AI to prevent failed products.",
+	"Type": "Machine",
+	"Mode(s)": {"easy": true, "medium": true, "hard": true},
+	 "Stats": {"profit": 0.45}
+},
+{
+	"Text": "Add a machine to replace the engine labelers.",
+	"Type": "Machine",
+	"Mode(s)": {"easy": true, "medium": true, "hard": true},
+	 "Stats": {"profit": 0.45}
+},
+{
+	"Text": "Do not renew the contract with machine manufacturer, employ new privately contracted engineers.",
+	"Type": "Machine",
+	"Mode(s)": {"easy": true, "medium": true, "hard": true},
+	 "Stats": {"profit": 0.45}
+}
+]

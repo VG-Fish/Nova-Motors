@@ -10,6 +10,10 @@ var actions: Array[VBoxContainer] = []
 var interactable_name: String
 @onready var options: VBoxContainer = $Background/VBoxContainer/Options
 signal action_done
+# for special machine specific actions text
+var use_special_action: bool = false
+var machine_specific_actions: Array = str_to_var(FileAccess.open("res://actions/machine_actions_text.txt", FileAccess.READ).get_as_text())
+var machine_action_text: String
 
 func _ready() -> void:
 	if number_of_actions == 4:
@@ -24,14 +28,17 @@ func make_actions() -> void:
 		if i < 3:
 			pot_action = action_scene.instantiate()
 			var random_action: Dictionary = get_action()
+			if i == 2 and use_special_action:
+				random_action = machine_specific_actions[randi_range(0, machine_specific_actions.size() - 1)]
+				print(random_action.Text)
 			while (
 				previous_actions_text.find(random_action) == -1 and
 				random_action["Mode(s)"].get(Globals.mode, false) and
-				random_action.Type != action_type
+				random_action.Type != action_type and not
+				use_special_action
 			):
 				previous_actions_text.append(random_action)
 				random_action = get_action()
-			
 			pot_action.find_child("Text").text = random_action.Text
 			pot_action.impacted_stats = random_action.Stats
 		else:
@@ -41,14 +48,12 @@ func make_actions() -> void:
 		actions.append(pot_action)
 		options.add_child(pot_action)
 
-
 func close(type: String) -> void:	
 	if type == "close":
 		visible = false
 	else:
 		action_done.emit()
 		close_actions()
-
 
 func close_actions() -> void:
 	actions = []
