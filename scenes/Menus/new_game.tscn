@@ -63,15 +63,15 @@ text = "Back"
 [node name="Info" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.3
+anchor_left = 0.1
 anchor_top = 0.3
 anchor_right = 0.3
 anchor_bottom = 0.3
 offset_right = 448.0
 offset_bottom = 54.0
-text = "Choose your difficulty mode.
-Please note that hard mode
-includes the stock market."
+text = "Reform the company by increasing your company's stats!
+Choose your difficulty mode.Please note that hard mode
+includes the stock market. "
 
 [connection signal="pressed" from="Mode Options/Easy Mode" to="." method="_on_easy_mode_pressed"]
 [connection signal="pressed" from="Mode Options/Medium Mode" to="." method="_on_medium_mode_pressed"]

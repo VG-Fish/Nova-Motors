@@ -47,7 +47,7 @@ func make_actions() -> void:
 		actions.append(pot_action)
 		options.add_child(pot_action)
 
-func close(type: String) -> void:	
+func close(type: String) -> void:
 	if type == "close":
 		visible = false
 	else:

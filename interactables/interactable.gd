@@ -14,7 +14,6 @@ var days_elasped: int = 0
 var DAYS_TIME_LIMIT: int = randi_range(1, 5)
 var days_until_new_action: int = randi_range(0, 1)
 
-
 func _ready() -> void:
 	Globals.connect("day_changed", update_ignore_meter)
 	actions.connect("action_done", finish_action)
@@ -36,7 +35,6 @@ func calculate_center() -> void:
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("primary action") and mouse_in_area and has_action:
 		actions.visible = !actions.visible
-
 
 func finish_action() -> void:
 	has_action = false
