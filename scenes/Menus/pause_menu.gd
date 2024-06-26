@@ -11,7 +11,6 @@ func _process(_delta) -> void:
 		do_pause_menu()
 
 func do_pause_menu() -> void:
-	#print(SceneSwitcher.get_scene_shown())
 	if get_tree().current_scene:
 		background = get_tree().current_scene.get_child(0)
 	else:
