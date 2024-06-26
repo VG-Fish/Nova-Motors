@@ -30,7 +30,6 @@ func make_actions() -> void:
 			var random_action: Dictionary = get_action()
 			if i == 2 and use_special_action:
 				random_action = machine_specific_actions[randi_range(0, machine_specific_actions.size() - 1)]
-				print(random_action.Text)
 			while (
 				previous_actions_text.find(random_action) == -1 and
 				random_action["Mode(s)"].get(Globals.mode, false) and

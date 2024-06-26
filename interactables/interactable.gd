@@ -36,7 +36,6 @@ func calculate_center() -> void:
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("primary action") and mouse_in_area and has_action:
 		actions.visible = !actions.visible
-		prints(actions.name, actions.global_position)
 
 
 func finish_action() -> void:
