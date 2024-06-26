@@ -45,6 +45,10 @@ window/stretch/aspect="ignore"
 version_control/plugin_name="GitPlugin"
 version_control/autoload_on_startup=true
 
+[gui]
+
+theme/custom_font="res://ui/PublicPixel-E447g.ttf"
+
 [input]
 
 right={

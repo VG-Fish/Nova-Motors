@@ -42,10 +42,9 @@ func _ready() -> void:
 #			highest_sentiment = i
 	
 	for i in range(4):
-		var customer_review_label: Label = Label.new()
+		var customer_review_label: Label = $"Computer Tabs/Customer Reviews/Reviews".get_child(i)
 		customer_review_label.text = customer_review_texts[i].Text
 		customer_review_label.text += "\nBy %s. I give this company a rating of %s/5.\n\n" % [customer_review_texts[i].Name, customer_review_texts[i].Rating]
-		$"Computer Tabs/Customer Reviews/Reviews".add_child(customer_review_label)
 
 func _process(_delta):
 	if Input.is_action_pressed("enlarge") and can_press:

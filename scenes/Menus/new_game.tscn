@@ -37,18 +37,12 @@ texture = ExtResource("3_nxxua")
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.05
-anchor_top = 0.3
+anchor_top = 0.4
 anchor_right = 0.1
-anchor_bottom = 0.3
+anchor_bottom = 0.4
 offset_right = 500.0
 offset_bottom = 153.0
 scale = Vector2(1.76, 2.04)
-
-[node name="Label" type="Label" parent="Mode Options"]
-layout_mode = 2
-text = "Choose your difficulty mode.
-Please note that hard mode
-includes the stock market."
 
 [node name="Easy Mode" type="Button" parent="Mode Options"]
 layout_mode = 2
@@ -65,6 +59,19 @@ text = "Hard Mode"
 [node name="Button" type="Button" parent="Mode Options"]
 layout_mode = 2
 text = "Back"
+
+[node name="Info" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3
+anchor_top = 0.3
+anchor_right = 0.3
+anchor_bottom = 0.3
+offset_right = 448.0
+offset_bottom = 54.0
+text = "Choose your difficulty mode.
+Please note that hard mode
+includes the stock market."
 
 [connection signal="pressed" from="Mode Options/Easy Mode" to="." method="_on_easy_mode_pressed"]
 [connection signal="pressed" from="Mode Options/Medium Mode" to="." method="_on_medium_mode_pressed"]

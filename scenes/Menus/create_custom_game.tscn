@@ -120,7 +120,7 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="Options/Stats"]
 layout_mode = 2
-text = "Change the stats you start off with. Range is [-0.5, 1.5] inclusive."
+text = "Change the stats you start off with. Range is [0, 100] inclusive."
 
 [node name="Employee Friendliness" type="VBoxContainer" parent="Options/Stats"]
 layout_mode = 2
@@ -138,10 +138,6 @@ texture = ExtResource("4_37c2j")
 
 [node name="SpinBox" type="SpinBox" parent="Options/Stats/Employee Friendliness"]
 layout_mode = 2
-min_value = -0.5
-max_value = 1.5
-step = 0.01
-value = 0.01
 
 [node name="Environment Indicators" type="VBoxContainer" parent="Options/Stats"]
 layout_mode = 2
@@ -160,10 +156,6 @@ texture = ExtResource("3_curv5")
 
 [node name="SpinBox" type="SpinBox" parent="Options/Stats/Environment Indicators"]
 layout_mode = 2
-min_value = -0.5
-max_value = 1.5
-step = 0.01
-value = 0.01
 
 [node name="Product Quality" type="VBoxContainer" parent="Options/Stats"]
 layout_mode = 2
@@ -181,10 +173,6 @@ texture = ExtResource("6_j6eph")
 
 [node name="SpinBox" type="SpinBox" parent="Options/Stats/Product Quality"]
 layout_mode = 2
-min_value = -0.5
-max_value = 1.5
-step = 0.01
-value = 0.01
 
 [node name="Profit" type="VBoxContainer" parent="Options/Stats"]
 layout_mode = 2
@@ -202,10 +190,6 @@ texture = ExtResource("7_hndh5")
 
 [node name="SpinBox" type="SpinBox" parent="Options/Stats/Profit"]
 layout_mode = 2
-min_value = -0.5
-max_value = 1.5
-step = 0.01
-value = 0.01
 
 [node name="Public Relations" type="VBoxContainer" parent="Options/Stats"]
 layout_mode = 2
@@ -223,10 +207,6 @@ texture = ExtResource("8_xkvof")
 
 [node name="SpinBox" type="SpinBox" parent="Options/Stats/Public Relations"]
 layout_mode = 2
-min_value = -0.5
-max_value = 1.5
-step = 0.01
-value = 0.01
 
 [node name="Create" type="Button" parent="Options"]
 layout_mode = 2
