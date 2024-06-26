@@ -35,28 +35,6 @@ func calculate_center() -> void:
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("primary action") and mouse_in_area and has_action:
 		actions.visible = !actions.visible
-		camera.zoom *= zoom_level
-		var viewport_size: Vector2 = get_viewport_rect().size / zoom_level
-		var center_viewport_size: Vector2 = viewport_size / 2
-		
-		# Move camera
-		center_viewport_size.y *= -1
-		# INFO: move camera offset to the center of the viewport size.
-		camera.offset = global_position + center_viewport_size
-		if camera.offset.y > viewport_size.y:
-			camera.offset.y -= (camera.offset.y - viewport_size.y)
-		if viewport_size.x > camera.offset.x:
-			camera.offset.x -= (camera.offset.x  - viewport_size.x)
-		
-		# Move actions
-		actions.scale /= zoom_level
-		center_viewport_size.y *= -1
-		actions.global_position = global_position - actions.get_action_size() / 4
-
-func reset_zoom() -> void:
-	actions.scale *= zoom_level
-	camera.zoom /= zoom_level
-	camera.offset = Vector2(1080, 0)
 
 func finish_action() -> void:
 	has_action = false
