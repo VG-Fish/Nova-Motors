@@ -26,7 +26,6 @@ func _ready() -> void:
 
 func calculate_center() -> void:
 	var view_port_size: Vector2 = Vector2(get_viewport().size)
-	
 	# To get correct size
 	actions.global_position = Vector2.ZERO
 	# Go back to original scale
@@ -37,6 +36,7 @@ func calculate_center() -> void:
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("primary action") and mouse_in_area and has_action:
 		actions.visible = !actions.visible
+		prints(actions.name, actions.global_position)
 
 
 func finish_action() -> void:

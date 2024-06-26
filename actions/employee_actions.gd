@@ -15,18 +15,10 @@ func _ready():
 	super._ready()
 
 func _process(_delta):
-	calculate_center()
 	if visible and not_added:
 		add_child(dialogue)
 		start_dialogue()
 		not_added = false
-
-func calculate_center() -> void:
-	# To get correct size
-	background.global_position = Vector2.ZERO
-	
-	background.global_position = abs((background.size - view_port_size) / 4)
-	#print(background.global_position)
 
 func restart_dialogue() -> void:
 	$Background/VBoxContainer/Text.text = ""

@@ -1,7 +1,7 @@
 extends Interactable
 
 func _ready() -> void:
-	actions_scene = preload("res://actions/employee_actions.tscn")
+	actions = preload("res://actions/employee_actions.tscn").instantiate()
 	super._ready()
 
 func _process(delta: float) -> void:
