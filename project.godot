@@ -38,7 +38,6 @@ WinLoseScreen="*res://scenes/win_lose_screen.tscn"
 window/size/viewport_width=1080
 window/size/viewport_height=720
 window/stretch/mode="viewport"
-window/stretch/aspect="ignore"
 
 [editor]
 

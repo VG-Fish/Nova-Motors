@@ -5,6 +5,7 @@ class_name Interactable
 # Actions Related
 var actions_scene: PackedScene = preload("res://actions/Base/action_layout.tscn")
 @onready var actions: Control = actions_scene.instantiate()
+@onready var camera: Camera2D = get_viewport().get_camera_2d()
 var has_action: bool = true
 var format_actions_text: String = "You have %s days left."
 var mouse_in_area: bool = false
@@ -22,19 +23,30 @@ func _ready() -> void:
 	$"Action Layout".add_child(actions)
 	$PointLight2D.energy = 0.5
 
-
 func calculate_center() -> void:
-	var view_port_size: Vector2 = Vector2(get_viewport().size)
+	var view_port_size: Vector2 = Vector2(get_viewport().size) 
 	# To get correct size
 	actions.global_position = Vector2.ZERO
 	# Go back to original scale
 	actions.scale /= scale
 	actions.global_position = (view_port_size - actions.get_action_size()) / 2
 
-
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("primary action") and mouse_in_area and has_action:
 		actions.visible = !actions.visible
+		var zoom_level: int = 2
+		camera.zoom *= zoom_level
+		var view_port_size: Vector2 = get_viewport_rect().size / zoom_level
+		var new_viewport_size: Vector2 = view_port_size / 2
+		
+		new_viewport_size.y *= -1
+		camera.offset = global_position + new_viewport_size
+		if camera.offset.y > view_port_size.y:
+			camera.offset.y -= (camera.offset.y - view_port_size.y)
+		if view_port_size.x > camera.offset.x:
+			camera.offset.x -= (camera.offset.x  - view_port_size.x)
+			
+		
 
 func finish_action() -> void:
 	has_action = false
@@ -42,7 +54,6 @@ func finish_action() -> void:
 	$PointLight2D.energy = 0
 	days_elasped = 0
 	$"Ignore Meter".value = 0
-
 
 func update_ignore_meter() -> void:
 	if not has_action:
@@ -70,7 +81,6 @@ func update_ignore_meter() -> void:
 		$"Ignore Meter".value += (1.0 / DAYS_TIME_LIMIT) * 100
 		change_ignore_meter_color()
 
-
 func change_ignore_meter_color() -> void:
 	# Change color value letters
 	var current_value: float = $"Ignore Meter".value
@@ -78,7 +88,6 @@ func change_ignore_meter_color() -> void:
 		$"Ignore Meter".modulate = Color.RED
 	elif current_value >= 33:
 		$"Ignore Meter".modulate = Color.YELLOW
-
 
 func save() -> Dictionary:
 	var save_dict: Dictionary = {
@@ -98,7 +107,6 @@ func save() -> Dictionary:
 	}
 	return save_dict
 
-
 func get_actions_text() -> Array[String]:
 	var actions_text: Array[String] = []
 	if actions.get("actions") == null:
@@ -107,10 +115,8 @@ func get_actions_text() -> Array[String]:
 		actions_text.append(actions.actions[i].find_child("Text").text)
 	return actions_text
 
-
 func _on_object_collision_area_mouse_entered():
 	mouse_in_area = true
-
 
 func _on_object_collision_area_mouse_exited():
 	mouse_in_area = false
