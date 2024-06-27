@@ -32,7 +32,7 @@ func save() -> Dictionary:
 			"x": $Player.global_position.x,
 			"y": $Player.global_position.y
 		},
-		"interactables": save_interactable_data()
+		"interactables": save_interactable_data(),
 	}
 	return save_data
 

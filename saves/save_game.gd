@@ -21,6 +21,7 @@ func save() -> Dictionary:
 			"make_negative_threshold": Globals.make_negative_threshold,
 			"noise_multiplier": Globals.noise_multiplier,
 			"stock_price_last_20_days": Globals.stock_price_last_20_days,
+			"local_multiplayer": Globals.local_multiplayer
 		},
 	}
 	
