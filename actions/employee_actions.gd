@@ -6,14 +6,31 @@ var not_added: bool = true
 @onready var background: PanelContainer = $Background
 @onready var view_port_size: Vector2 = Vector2(get_viewport().size)
 var interactable_name: String
+var prompt: String = " ".join([
+	"Replace the %20 with spaces in the prompt if there are any.",
+	"You are a employee in a game who is presenting a series of actions that the boss (player) can choose.",
+	"You change your attitude to your boss depending on the stat employee friendliness, which ranging from 0 to 100.",
+	"Please act more cordially with your boss the higher the stat is. Otherwise, present the actions quite arrogantly.",
+	"Right now, the stat is: %s." % Globals.stats["employee_friendliness"],
+	"In your response, please be very brief and try to respond in less than 10 words and not have redundant spaces."
+])
+var employee_message: String
 
 func _ready():
 	dialogue.label = employee_info
 	interactable_name = "Joe: "
-	dialogue.change_message([interactable_name + "Here are your options."] as Array[String])
+	
+	$HTTPRequest.request_completed.connect(_on_request_completed)
+	var url: String = "https://vgfishy.pythonanywhere.com/gemini?prompt=%s" % prompt
+	await $HTTPRequest.request(url)
 	
 	number_of_actions = Globals.action_type.regular
 	super._ready()
+
+func _on_request_completed(_result, _response_code, _headers, body) -> void:
+	var json: Dictionary = JSON.parse_string(body.get_string_from_utf8())
+	employee_message = json["candidates"][0]["content"]["parts"][0]["text"].replace("\n", "")
+	dialogue.change_message([interactable_name + employee_message] as Array[String])
 
 func _process(_delta):
 	if visible and not_added:

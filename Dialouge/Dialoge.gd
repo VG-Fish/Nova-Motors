@@ -61,8 +61,4 @@ func _on_next_message_timeout():
 
 func change_message(message: Array[String]) -> void:
 	messages = message
-	
-func _notification(what: int) -> void:
-	match what:
-		NOTIFICATION_PREDELETE:
-			print(get_parent().name)
+
