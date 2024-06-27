@@ -30,9 +30,6 @@ position = Vector2(7, 346)
 position = Vector2(-155, 636)
 scale = Vector2(7, 4.884)
 
-[node name="Player2" parent="." index="7"]
-visible = false
-
 [node name="Button" type="Button" parent="." index="8"]
 anchors_preset = 15
 anchor_right = 1.0

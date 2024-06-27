@@ -32,6 +32,7 @@ layout_mode = 2
 [node name="Text" type="Label" parent="Background/VBoxContainer"]
 custom_minimum_size = Vector2(1000, 2.08165e-12)
 layout_mode = 2
+theme_override_font_sizes/font_size = 11
 autowrap_mode = 2
 
 [node name="Button" type="Button" parent="Background/VBoxContainer"]

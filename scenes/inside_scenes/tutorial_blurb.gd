@@ -13,7 +13,8 @@ var message: Array[String] = [
 	You have to balance all of these statistics to make sure your company is the best that it can be, and that means making sacrifices and tough decisions. \
 	With all of that, get out there and make nova motors into one of the most successful companies out there, and hopefully a Fortune 500! \
 	To play the game, use A and D to move to the left and right, left click to click on objects, and P or ESC to access the pause menu. \
-	You can click on doors to go to other rooms. Your progress will automatically be saved."
+	You can click on doors to go to other rooms. Your progress will automatically be saved. \
+	If you have local multiplayer on, the second player can move around using the J and L keys and stand next to an interactable and press enter to open up the options."
 ]
 var not_in_tutorial: bool = true
 @onready var employee_info: Label = $Background/VBoxContainer/Text
