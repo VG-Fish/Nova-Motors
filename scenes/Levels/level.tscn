@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://bvqghfq06n6pl"]
+[gd_scene load_steps=8 format=3 uid="uid://bvqghfq06n6pl"]
 
 [ext_resource type="Script" path="res://scenes/Levels/level.gd" id="1_t32wd"]
 [ext_resource type="PackedScene" uid="uid://i2xgqm83u615" path="res://player/player.tscn" id="2_fmwco"]
 [ext_resource type="Texture2D" uid="uid://bpx0cialcxe4v" path="res://icon.svg" id="2_subn0"]
 [ext_resource type="PackedScene" uid="uid://bbcodlaxvj7m3" path="res://ui/ui.tscn" id="3_3mcwy"]
+[ext_resource type="PackedScene" uid="uid://dwsxkffsp8g17" path="res://player/player2.tscn" id="4_xlniy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xjq4d"]
 size = Vector2(21, 1159)
@@ -42,5 +43,8 @@ shape = SubResource("RectangleShape2D_sopr5")
 
 [node name="Player" parent="." instance=ExtResource("2_fmwco")]
 position = Vector2(0, 2.08165e-12)
+
+[node name="Player2" parent="." instance=ExtResource("4_xlniy")]
+visible = false
 
 [node name="UI" parent="." instance=ExtResource("3_3mcwy")]

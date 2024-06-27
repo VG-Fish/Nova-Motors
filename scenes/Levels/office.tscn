@@ -38,3 +38,7 @@ position = Vector2(11, 303)
 [node name="Player" parent="." index="6"]
 position = Vector2(-183, 631)
 scale = Vector2(8, 5.581)
+
+[node name="Player2" parent="." index="7"]
+position = Vector2(-945, 631)
+scale = Vector2(8, 5.581)

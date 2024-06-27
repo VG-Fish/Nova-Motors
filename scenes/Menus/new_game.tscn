@@ -56,6 +56,10 @@ text = "Medium Mode"
 layout_mode = 2
 text = "Hard Mode"
 
+[node name="Multiplayer" type="CheckButton" parent="Mode Options"]
+layout_mode = 2
+text = "Do you want local multiplayer?"
+
 [node name="Button" type="Button" parent="Mode Options"]
 layout_mode = 2
 text = "Back"

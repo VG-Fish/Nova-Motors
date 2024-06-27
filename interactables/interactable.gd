@@ -9,6 +9,7 @@ var actions_scene: PackedScene = preload("res://actions/Base/action_layout.tscn"
 var has_action: bool = true
 var format_actions_text: String = "You have %s days left."
 var mouse_in_area: bool = false
+var player_nearby: bool = false
 var zoom_level: int = 2
 
 # Days Related
@@ -33,7 +34,9 @@ func calculate_center() -> void:
 	actions.global_position = (view_port_size - actions.get_action_size()) / 2
 
 func _process(_delta: float) -> void:
-	if Input.is_action_just_pressed("primary action") and mouse_in_area and has_action:
+	if Input.is_action_just_pressed("primary action") and mouse_in_area and has_action and player_nearby:
+		actions.visible = !actions.visible
+	elif Input.is_action_just_pressed("primary action 2") and player_nearby and has_action:
 		actions.visible = !actions.visible
 
 func finish_action() -> void:
@@ -108,3 +111,9 @@ func _on_object_collision_area_mouse_entered():
 
 func _on_object_collision_area_mouse_exited():
 	mouse_in_area = false
+
+func _on_player_collision_area_body_entered(_body):
+	player_nearby = true
+
+func _on_player_collision_area_body_exited(_body):
+	player_nearby = false

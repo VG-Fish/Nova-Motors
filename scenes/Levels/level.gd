@@ -6,7 +6,11 @@ var days_passed: int = 0
 
 func _ready() -> void:
 	Globals.connect("day_changed", check_board_summon)
+	Globals.connect("local_multiplayer_true", show_second_player)
 	$Player.connect("show_interactable_actions", show_interactable_actions)
+
+func show_second_player() -> void:
+	$Player2.visible = true
 
 func show_interactable_actions(area: Area2D) -> void:
 	for interactable_object in $Interactables.get_children():

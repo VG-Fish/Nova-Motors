@@ -18,6 +18,11 @@ var stats: Dictionary = { "profit": 0,
 	"public_relations": 0, "employee_friendliness": 0, 
 	"product_quality": 0, "environment_indicators": 0
 }
+var local_multiplayer: bool = false:
+	set(value):
+		local_multiplayer = value
+		if value:
+			local_multiplayer_true.emit()
 
 var days_since_start: int = 0:
 	set(value):
@@ -73,6 +78,7 @@ var config: ConfigFile = ConfigFile.new()
 # SIGNALS
 signal day_changed
 signal action_completed
+signal local_multiplayer_true
 
 # FUNCTIONS
 func _ready() -> void:

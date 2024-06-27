@@ -11,7 +11,7 @@ func _ready() -> void:
 
 func _process(_delta) -> void:
 	# Movement
-	var direction_x = Input.get_axis("left2", "right2")
+	var direction_x = Input.get_axis("left", "right")
 	# Animation
 	if direction_x == -1:
 		player.animation = "left"

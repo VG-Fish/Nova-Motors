@@ -77,3 +77,6 @@ offset_right = 324.0
 offset_bottom = 16.0
 rotation = -1.58108
 scale = Vector2(0.0792229, 0.278384)
+
+[node name="CollisionShape2D" parent="Player Collision Area" index="0"]
+position = Vector2(8, 4)
