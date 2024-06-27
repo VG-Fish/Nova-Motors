@@ -18,27 +18,38 @@ var employee_message: String
 
 func _ready():
 	dialogue.label = employee_info
+	dialogue.delete = false
 	interactable_name = "Joe: "
 	
 	$HTTPRequest.request_completed.connect(_on_request_completed)
-	var url: String = "https://vgfishy.pythonanywhere.com/gemini?prompt=%s" % prompt
-	await $HTTPRequest.request(url)
+	get_response()
 	
 	number_of_actions = Globals.action_type.regular
 	super._ready()
+	add_child(dialogue)
+
+func get_response() -> void:
+	var url: String = "https://vgfishy.pythonanywhere.com/gemini?prompt=%s" % prompt
+	$HTTPRequest.request(url)
 
 func _on_request_completed(_result, _response_code, _headers, body) -> void:
 	var json: Dictionary = JSON.parse_string(body.get_string_from_utf8())
-	employee_message = json["candidates"][0]["content"]["parts"][0]["text"].replace("\n", "")
+	if json["candidates"][0].get("content", ""):
+		employee_message = json["candidates"][0]["content"]["parts"][0]["text"].replace("\n", "")
+	else:
+		employee_message = "here are your options."
 	dialogue.change_message([interactable_name + employee_message] as Array[String])
 
 func _process(_delta):
 	if visible and not_added:
-		add_child(dialogue)
+		clear_dialogue()
+		get_response()
 		start_dialogue()
 		not_added = false
 
-func restart_dialogue() -> void:
+func clear_dialogue() -> void:
+	dialogue.label = employee_info
+	dialogue.change_message([interactable_name + employee_message] as Array[String])
 	$Background/VBoxContainer/Text.text = ""
 
 func start_dialogue() -> void:

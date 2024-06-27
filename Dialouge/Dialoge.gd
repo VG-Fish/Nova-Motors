@@ -22,9 +22,6 @@ var current_char = 0
 var delete: bool = true
 @onready var label: Label 
 
-func _ready():
-	start_dialogue()
-
 func start_dialogue():
 	current_message = 0
 	display = ""
@@ -53,7 +50,7 @@ func _on_next_char_timeout():
 func _on_next_message_timeout():
 	if (current_message == len(messages) - 1):
 		stop_dialogue()
-	else: 
+	else:
 		current_message += 1
 		display = ""
 		current_char = 0

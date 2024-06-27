@@ -18,6 +18,7 @@ layout_mode = 2
 
 [node name="Text" type="Label" parent="Background/VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 10
 
 [node name="Options" type="VBoxContainer" parent="Background/VBoxContainer"]
 layout_mode = 2

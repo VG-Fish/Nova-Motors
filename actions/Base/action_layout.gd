@@ -53,6 +53,8 @@ func make_actions() -> void:
 		options.add_child(pot_action)
 
 func close(type: String) -> void:
+	if name == "Employee Actions":
+		self.not_added = true
 	if type == "close":
 		visible = false
 	else:
