@@ -37,6 +37,7 @@ energy = 0.5
 texture = ExtResource("2_rnmr3")
 
 [node name="Ignore Meter" type="TextureProgressBar" parent="."]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
