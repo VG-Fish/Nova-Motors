@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://7ty1ab8m6v2n"]
+[gd_scene load_steps=11 format=3 uid="uid://7ty1ab8m6v2n"]
 
 [ext_resource type="PackedScene" uid="uid://bvqghfq06n6pl" path="res://scenes/Levels/level.tscn" id="1_ghgso"]
 [ext_resource type="Script" path="res://scenes/Levels/factory.gd" id="2_iy24v"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dp1ey82k86x2b" path="res://Assets/ALL OTHER ASSETS/Solid_white.png" id="6_ghks4"]
 [ext_resource type="PackedScene" uid="uid://bqhifpfsx5gqp" path="res://interactables/machine.tscn" id="6_svi5h"]
 [ext_resource type="Texture2D" uid="uid://dyunu5joj4vro" path="res://Assets/ALL OTHER ASSETS/cars.png" id="7_cu6hr"]
+[ext_resource type="PackedScene" uid="uid://plt34u1w0cp6" path="res://interactables/employee2.tscn" id="9_0xyuh"]
 
 [node name="Factory" groups=["Level"] instance=ExtResource("1_ghgso")]
 position = Vector2(1080, 2.08165e-12)
@@ -48,12 +49,12 @@ scale = Vector2(5, 5)
 position = Vector2(-150, 580)
 scale = Vector2(5, 6)
 
-[node name="Employee2" parent="Interactables" index="3" instance=ExtResource("4_kw738")]
-position = Vector2(-700, 512)
+[node name="Machine2" parent="Interactables" index="3" instance=ExtResource("6_svi5h")]
+position = Vector2(-900, 595)
 scale = Vector2(5, 5)
 
-[node name="Machine2" parent="Interactables" index="4" instance=ExtResource("6_svi5h")]
-position = Vector2(-900, 595)
+[node name="Employee2" parent="Interactables" index="4" instance=ExtResource("9_0xyuh")]
+position = Vector2(-700, 512)
 scale = Vector2(5, 5)
 
 [node name="Factory" parent="Scenes" index="0" instance=ExtResource("4_abpp1")]

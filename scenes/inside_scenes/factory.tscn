@@ -11,3 +11,4 @@ texture_filter = 1
 
 [node name="Main Background" type="Sprite2D" parent="Backgrounds"]
 texture = ExtResource("2_vniak")
+region_rect = Rect2(0, 0, 320, 170)
