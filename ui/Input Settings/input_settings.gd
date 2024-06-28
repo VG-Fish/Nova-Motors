@@ -12,8 +12,6 @@ var input_actions: Dictionary = {
 	"right": "Right Movement",
 	"left": "Left Movement",
 	"primary action": "Primary Interact",
-	"up": "Object Interact",
-	"enlarge": "Text Enlarger",
 }
 
 

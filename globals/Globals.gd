@@ -119,6 +119,8 @@ func load_config_file(file_name: String, passcode: String) -> void:
 		return
 	
 	for input in config.get_section_keys("InputMap"):
+		if input == "enlarge":
+			continue
 		InputMap.action_erase_events(input)
 		var events = config.get_value("InputMap", input)
 		for event in events:
@@ -166,7 +168,7 @@ func add_value_to_stat(stat: String, value: float) -> void:
 	stats[stat] += (value * 15) + randf_range(-1, 1)
 	stats[stat] = clamp(stats[stat], 0, 100)
 	# NOTE: To make the game longer and add variability to the change.
-	stats[stat] += (value * 15) + randf_range(-1, 1)
+	stats[stat] += (value * 12) + randf_range(-1, 1)
 	stats[stat] = clamp(stats[stat], 0, 100)
 	change_stock_multipliers(current_grade)
 

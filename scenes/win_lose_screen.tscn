@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://co65f5pijj7qm"]
+[gd_scene load_steps=3 format=3 uid="uid://co65f5pijj7qm"]
 
 [ext_resource type="Script" path="res://scenes/win_lose_screen.gd" id="1_34eay"]
+[ext_resource type="Texture2D" uid="uid://bqql5ya3jqlb" path="res://New Assets/scene_backgrounds/main_menu.png" id="2_y5u88"]
 
 [node name="Win Lose Screen" type="Control"]
 layout_mode = 3
@@ -11,38 +12,43 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_34eay")
 
-[node name="PanelContainer" type="PanelContainer" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("2_y5u88")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 2
+offset_left = 312.0
+offset_top = 315.0
+offset_right = 1128.0
+offset_bottom = 485.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="Info" type="Label" parent="PanelContainer/VBoxContainer"]
+[node name="Info" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 
-[node name="Spacer" type="Control" parent="PanelContainer/VBoxContainer"]
+[node name="Spacer" type="Control" parent="VBoxContainer"]
 custom_minimum_size = Vector2(2.08165e-12, 30)
 layout_mode = 2
 
-[node name="Credits" type="Label" parent="PanelContainer/VBoxContainer"]
+[node name="Credits" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 text = "Nova Motors was made by Vishwesswaran Gopal, Daniel 
 Minkov, and Sushant Kesavan. All assets were either 
 made by us or were open source and free to use."
 
-[node name="Spacer2" type="Control" parent="PanelContainer/VBoxContainer"]
+[node name="Spacer2" type="Control" parent="VBoxContainer"]
 custom_minimum_size = Vector2(2.08165e-12, 30)
 layout_mode = 2
 
-[node name="Button" type="Button" parent="PanelContainer/VBoxContainer"]
+[node name="Button" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 text = "New Game"
 
-[connection signal="pressed" from="PanelContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]

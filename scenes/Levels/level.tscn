@@ -43,6 +43,7 @@ shape = SubResource("RectangleShape2D_sopr5")
 
 [node name="Player" parent="." instance=ExtResource("2_fmwco")]
 position = Vector2(0, 2.08165e-12)
+scale = Vector2(5, 3.488)
 
 [node name="Player2" parent="." instance=ExtResource("4_xlniy")]
 visible = false

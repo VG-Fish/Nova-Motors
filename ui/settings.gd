@@ -36,4 +36,4 @@ func _on_spin_box_value_changed(value):
 
 
 func _on_main_menu_button_pressed():
-	get_tree().change_scene_to_packed(preload("res://scenes/Menus/main_menu.tscn"))
+	visible = false

@@ -30,7 +30,7 @@ func _on_save_pressed() -> void:
 	SaveGame.save_game(Globals.current_game)
 
 func _on_settings_pressed() -> void:
-	get_tree().current_scene.visible = false
+	
 	get_tree().change_scene_to_file("res://ui/settings.tscn")
 	do_pause_menu()
 

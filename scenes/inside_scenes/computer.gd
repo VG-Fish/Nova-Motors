@@ -47,7 +47,7 @@ func _ready() -> void:
 		customer_review_label.text += "\nBy %s. I give this company a rating of %s/5.\n\n" % [customer_review_texts[i].Name, customer_review_texts[i].Rating]
 
 func _process(_delta):
-	if Input.is_action_pressed("enlarge") and can_press:
+	if Input.is_action_pressed("up") and can_press:
 		can_press = false
 		amount_of_times_space_is_pressed += 1
 		$"Space Bar Timer".start()

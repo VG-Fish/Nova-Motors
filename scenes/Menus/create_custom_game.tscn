@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://scenes/Menus/create_custom_game.gd" id="1_yhmyu"]
 [ext_resource type="Theme" uid="uid://dqdpb1lan45tv" path="res://ui/ui.tres" id="2_slq0o"]
-[ext_resource type="Texture2D" uid="uid://d3p8ngmbp5prx" path="res://Assets/ALL OTHER ASSETS/menu.png" id="3_1orha"]
 [ext_resource type="Texture2D" uid="uid://dfld7lsiuge1u" path="res://Assets/Icons/Flower2.png" id="3_curv5"]
+[ext_resource type="Texture2D" uid="uid://bqql5ya3jqlb" path="res://New Assets/scene_backgrounds/main_menu.png" id="3_ux4ax"]
 [ext_resource type="Texture2D" uid="uid://c2sdurefai3cf" path="res://Assets/Icons/Team.png" id="4_37c2j"]
 [ext_resource type="Texture2D" uid="uid://5x13b31omafn" path="res://Assets/Icons/Car.png" id="6_j6eph"]
 [ext_resource type="Texture2D" uid="uid://bgol4krny24qr" path="res://Assets/Icons/Cash2.png" id="7_hndh5"]
@@ -38,7 +38,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("3_1orha")
+texture = ExtResource("3_ux4ax")
 
 [node name="Options" type="VBoxContainer" parent="."]
 layout_mode = 1

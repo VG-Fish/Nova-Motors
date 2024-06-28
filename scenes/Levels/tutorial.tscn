@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bvqghfq06n6pl" path="res://scenes/Levels/level.tscn" id="1_ffk78"]
 [ext_resource type="Script" path="res://scenes/Levels/tutorial.gd" id="2_kkeux"]
-[ext_resource type="Texture2D" uid="uid://dl3gb1j5wevf7" path="res://Assets/ALL OTHER ASSETS/office.png" id="3_q71bg"]
+[ext_resource type="Texture2D" uid="uid://jyb1cuf827sl" path="res://New Assets/scene_backgrounds/officescene.png" id="3_6c2s2"]
 [ext_resource type="PackedScene" uid="uid://66ql6jl27siw" path="res://interactables/employee.tscn" id="4_uj7k8"]
 [ext_resource type="PackedScene" uid="uid://cpg1lpaam54no" path="res://scenes/inside_scenes/tutorial_blurb.tscn" id="5_8sdjr"]
 
@@ -12,32 +12,30 @@ position = Vector2(1080, 2.08165e-12)
 script = ExtResource("2_kkeux")
 
 [node name="Main Background" parent="Backgrounds" index="0"]
-position = Vector2(-540.001, 361.125)
-scale = Vector2(4.21094, 4.97049)
-texture = ExtResource("3_q71bg")
+position = Vector2(-360, 400)
+scale = Vector2(5, 5)
+texture = ExtResource("3_6c2s2")
 
 [node name="Employee" parent="Interactables" index="0" instance=ExtResource("4_uj7k8")]
-position = Vector2(-695, 636)
-scale = Vector2(7, 4.303)
+position = Vector2(-731, 589)
+scale = Vector2(5, 3.074)
 
 [node name="CollisionShape2D" parent="Bounds" index="0"]
-position = Vector2(-1090, 154)
+position = Vector2(-1075, 199)
 
 [node name="CollisionShape2D2" parent="Bounds" index="1"]
-position = Vector2(7, 346)
+position = Vector2(374, 284)
 
 [node name="Player" parent="." index="6"]
-position = Vector2(-155, 636)
-scale = Vector2(7, 4.884)
+position = Vector2(-155, 600)
+scale = Vector2(5, 3.489)
 
 [node name="Button" type="Button" parent="." index="8"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -640.0
-offset_top = 1.0
-offset_right = -476.0
-offset_bottom = 59.0
+anchors_preset = -1
+offset_left = -504.0
+offset_top = 64.0
+offset_right = -248.0
+offset_bottom = 88.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4

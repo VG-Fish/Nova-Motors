@@ -23,7 +23,7 @@ texture = ExtResource("6_ghks4")
 
 [node name="Main Background" parent="Backgrounds" index="1"]
 z_index = -1
-position = Vector2(-540, 359.5)
+position = Vector2(-360, 400)
 scale = Vector2(4.22656, 5.00694)
 texture = ExtResource("3_elett")
 
@@ -36,8 +36,8 @@ region_enabled = true
 region_rect = Rect2(0, 64, 96, 33)
 
 [node name="Employee" parent="Interactables" index="0" instance=ExtResource("4_kw738")]
-position = Vector2(-800, 626)
-scale = Vector2(8, 4)
+position = Vector2(-800, 600)
+scale = Vector2(6, 3)
 
 [node name="Factory Door" parent="Interactables" index="1" instance=ExtResource("5_w01xd")]
 position = Vector2(-130, 582)
@@ -60,12 +60,12 @@ scale = Vector2(4, 4)
 position = Vector2(-1092, 360)
 
 [node name="CollisionShape2D2" parent="Bounds" index="1"]
-position = Vector2(11, 299)
+position = Vector2(352, 357)
 
 [node name="Player" parent="." index="6"]
-position = Vector2(-141, 628)
-scale = Vector2(8, 5.581)
+position = Vector2(-141, 600)
+scale = Vector2(5, 5)
 
 [node name="Player2" parent="." index="7"]
-position = Vector2(-533, 628)
-scale = Vector2(8, 5.581)
+position = Vector2(-533, 600)
+scale = Vector2(5, 5)

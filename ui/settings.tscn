@@ -157,11 +157,11 @@ layout_mode = 2
 [node name="Input Settings" parent="TabContainer/Key Binds" instance=ExtResource("4_yuvc6")]
 layout_mode = 1
 
-[node name="Main Menu" type="TabBar" parent="TabContainer"]
+[node name="Close" type="TabBar" parent="TabContainer"]
 visible = false
 layout_mode = 2
 
-[node name="Main Menu Button" type="Button" parent="TabContainer/Main Menu"]
+[node name="Main Menu Button" type="Button" parent="TabContainer/Close"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -174,11 +174,11 @@ offset_right = 173.0
 offset_bottom = 13.0
 grow_horizontal = 2
 grow_vertical = 2
-text = " Back to Main Menu?"
+text = "Close?"
 
 [connection signal="pressed" from="TabContainer/Sound/VBoxContainer/Mute/HBoxContainer/Mute" to="." method="_on_mute_pressed"]
 [connection signal="value_changed" from="TabContainer/Sound/VBoxContainer/Background Music Slider/Sound" to="." method="_on_sound_value_changed"]
 [connection signal="value_changed" from="TabContainer/Sound/VBoxContainer/Sound Effects Slider/SFX" to="." method="_on_sfx_value_changed"]
 [connection signal="item_selected" from="TabContainer/Text/VBoxContainer/Text Font/OptionButton" to="." method="_on_option_button_item_selected"]
 [connection signal="value_changed" from="TabContainer/Text/VBoxContainer/Text Size/SpinBox" to="." method="_on_spin_box_value_changed"]
-[connection signal="pressed" from="TabContainer/Main Menu/Main Menu Button" to="." method="_on_main_menu_button_pressed"]
+[connection signal="pressed" from="TabContainer/Close/Main Menu Button" to="." method="_on_main_menu_button_pressed"]

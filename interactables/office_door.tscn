@@ -2,26 +2,26 @@
 
 [ext_resource type="PackedScene" uid="uid://ednwuftto6d1" path="res://interactables/door.tscn" id="1_hub4b"]
 [ext_resource type="Script" path="res://interactables/office_door.gd" id="2_t1yq3"]
-[ext_resource type="Texture2D" uid="uid://dl3gb1j5wevf7" path="res://Assets/ALL OTHER ASSETS/office.png" id="3_vjgde"]
+[ext_resource type="Texture2D" uid="uid://dbdw1lbag4jd5" path="res://New Assets/ui/door.png" id="3_hgg5w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jdscu"]
-size = Vector2(32, 26)
+size = Vector2(27, 53)
 
 [node name="Door" instance=ExtResource("1_hub4b")]
 script = ExtResource("2_t1yq3")
 
 [node name="Object" parent="." index="0"]
 texture_filter = 1
-texture = ExtResource("3_vjgde")
+texture = ExtResource("3_hgg5w")
 region_enabled = true
-region_rect = Rect2(208, 99, 32, 29)
+region_rect = Rect2(247.212, 81.1088, 26.643, 54.1615)
 
 [node name="CollisionShape2D" parent="Area2D" index="0"]
-position = Vector2(-0.5, -0.212615)
-scale = Vector2(1.02924, 0.964564)
+position = Vector2(0.5, 0.5)
 
 [node name="PointLight2D" parent="." index="3"]
 position = Vector2(1, 3)
 
 [node name="CollisionShape2D" parent="Area2D2" index="0"]
+position = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_jdscu")

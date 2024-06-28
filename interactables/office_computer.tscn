@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://cvhosqdohvlku"]
+[gd_scene load_steps=9 format=3 uid="uid://cvhosqdohvlku"]
 
 [ext_resource type="PackedScene" uid="uid://d0qt1pyanlfv4" path="res://interactables/interactable.tscn" id="1_f13nm"]
 [ext_resource type="Script" path="res://interactables/office_computer.gd" id="2_5xpci"]
-[ext_resource type="Texture2D" uid="uid://dl3gb1j5wevf7" path="res://Assets/office.png" id="3_6ljst"]
+[ext_resource type="Texture2D" uid="uid://dl3gb1j5wevf7" path="res://Assets/ALL OTHER ASSETS/office.png" id="3_6ljst"]
+[ext_resource type="Texture2D" uid="uid://cog8hul0ydbj8" path="res://New Assets/ui/computer.png" id="4_k4fg4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_blx5v"]
 texture = ExtResource("3_6ljst")
@@ -326,12 +327,18 @@ _data = {
 script = ExtResource("2_5xpci")
 
 [node name="Object" parent="Object Collision Area" index="0"]
+visible = false
 texture_filter = 1
 tile_set = SubResource("TileSet_x87c3")
 layer_0/tile_data = PackedInt32Array(-65536, 458752, 13, 0, 458752, 14)
 
 [node name="CollisionPolygon2D" parent="Object Collision Area" index="1"]
-polygon = PackedVector2Array(0, -6, 13, -6, 13, -1, 16, -1, 16, 4, 13, 4, 13, 5, 10, 5, 10, 7, 3, 7, 3, 5, 0, 5)
+polygon = PackedVector2Array(-10, -9, 10, -9, 10, 5, 3, 5, 3, 7, 10, 7, 11, 9, -10, 9, -10, 7, -4, 7, -4, 5, -10, 5)
+
+[node name="Sprite2D" type="Sprite2D" parent="Object Collision Area" index="2"]
+texture = ExtResource("4_k4fg4")
+region_enabled = true
+region_rect = Rect2(21.743, 34.8772, 21.0142, 20.2637)
 
 [node name="Arrow" parent="." index="1"]
 position = Vector2(8, -23.1895)
