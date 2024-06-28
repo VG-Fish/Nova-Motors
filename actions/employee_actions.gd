@@ -12,7 +12,7 @@ var prompt: String = " ".join([
 	"You change your attitude to your boss depending on the stat employee friendliness, which ranging from 0 to 100.",
 	"Please act more cordially with your boss the higher the stat is. Otherwise, present the actions quite arrogantly.",
 	"Right now, the stat is: %s." % Globals.stats["employee_friendliness"],
-	"In your response, please be very brief and try to respond in less than 10 words and not have redundant spaces."
+	"In your response, please be very brief and try to respond in less than 20 words and not have redundant spaces."
 ])
 var employee_message: String
 

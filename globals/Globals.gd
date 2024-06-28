@@ -43,6 +43,8 @@ var amount_of_actions: int = 3:
 			# FIXME, HACK: Find proper fix. For some reason, after a day change, something is decreasing actions automatically.
 			# but I don't want to fix that right now.
 			amount_of_actions = 3
+			if days_since_start >= 7:
+				amount_of_actions += 1
 		SaveGame.save_game(current_game)
 			
 # It's in ALL CAPS to make it different from all the other grade related things

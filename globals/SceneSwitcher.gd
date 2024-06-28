@@ -31,7 +31,6 @@ func show_scene(scene: SCENE) -> void:
 	
 	if scene == SCENE.BOARD:
 		scenes[scene].add_dialogue()
-		scenes[scene].add_dialogue()
 	
 	if scene not in [SCENE.MENU, SCENE.COMPUTER, SCENE.BOARD]:
 		UI.visible = true

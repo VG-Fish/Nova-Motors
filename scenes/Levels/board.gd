@@ -16,3 +16,5 @@ func add_dialogue() -> void:
 	board_dialogue.visible = true
 	board_dialogue.start_dialogue()
 	add_child(board_dialogue)
+	# To skip to next day
+	Globals.amount_of_actions -= 2
