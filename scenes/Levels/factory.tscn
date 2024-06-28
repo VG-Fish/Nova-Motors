@@ -37,19 +37,23 @@ region_enabled = true
 region_rect = Rect2(0, 64, 96, 33)
 
 [node name="Employee" parent="Interactables" index="0" instance=ExtResource("4_kw738")]
-position = Vector2(-800, 512)
-scale = Vector2(5, 5)
+position = Vector2(-1000, 512)
+scale = Vector2(-5, 5)
 
 [node name="Factory Door" parent="Interactables" index="1" instance=ExtResource("5_w01xd")]
 position = Vector2(259, 545)
 scale = Vector2(5, 5)
 
 [node name="Machine" parent="Interactables" index="2" instance=ExtResource("6_svi5h")]
-position = Vector2(-675, 580)
+position = Vector2(-150, 580)
 scale = Vector2(5, 6)
 
 [node name="Employee2" parent="Interactables" index="3" instance=ExtResource("4_kw738")]
-position = Vector2(-50, 512)
+position = Vector2(-700, 512)
+scale = Vector2(5, 5)
+
+[node name="Machine2" parent="Interactables" index="4" instance=ExtResource("6_svi5h")]
+position = Vector2(-900, 595)
 scale = Vector2(5, 5)
 
 [node name="Factory" parent="Scenes" index="0" instance=ExtResource("4_abpp1")]

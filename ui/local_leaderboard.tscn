@@ -38,13 +38,14 @@ texture = ExtResource("3_ckf20")
 [node name="Main Menu Button" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.3
+anchor_left = 0.33
 anchor_top = 0.8
 anchor_right = 0.6
 anchor_bottom = 0.8
 offset_left = -1.28746e-05
 offset_right = 141.0
 offset_bottom = 31.0
+scale = Vector2(1, 1.00245)
 text = "Go to Main Menu"
 
 [node name="PanelContainer" type="PanelContainer" parent="."]

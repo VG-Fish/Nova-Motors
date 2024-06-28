@@ -19,7 +19,7 @@ func calculate_center() -> void:
 	# To get correct size
 	background.global_position = Vector2.ZERO
 	
-	background.global_position = abs((background.size - view_port_size) / 4)
+	background.global_position = abs((background.size - view_port_size) / 2)
 
 func restart_dialogue() -> void:
 	$Background/VBoxContainer/Text.text = ""

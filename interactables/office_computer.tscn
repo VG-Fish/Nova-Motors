@@ -341,8 +341,8 @@ region_enabled = true
 region_rect = Rect2(21.743, 34.8772, 21.0142, 20.2637)
 
 [node name="Arrow" parent="." index="1"]
-position = Vector2(8, -23.1895)
-scale = Vector2(0.7, 0.7)
+position = Vector2(2.08165e-12, -20)
+scale = Vector2(0.698512, 0.7)
 
 [node name="AnimationPlayer" parent="." index="2"]
 libraries = {
