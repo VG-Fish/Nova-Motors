@@ -1,36 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://cxkltj3hv20yu"]
+[gd_scene load_steps=2 format=3 uid="uid://cxkltj3hv20yu"]
 
 [ext_resource type="Script" path="res://globals/day_change.gd" id="1_cnpri"]
-[ext_resource type="Texture2D" uid="uid://dp1ey82k86x2b" path="res://Assets/ALL OTHER ASSETS/Solid_white.png" id="2_of5sw"]
 
 [node name="Control" type="Control"]
+z_index = 100
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 0
 mouse_filter = 2
 script = ExtResource("1_cnpri")
 
 [node name="Panel" type="Panel" parent="."]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+modulate = Color(0, 0, 0, 0)
+layout_mode = 0
+offset_right = 1440.0
+offset_bottom = 800.0
 mouse_filter = 2
-
-[node name="TextureRect" type="TextureRect" parent="."]
-visible = false
-modulate = Color(0, 0, 0, 1)
-z_index = 4096
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("2_of5sw")

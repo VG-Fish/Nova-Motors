@@ -33,8 +33,6 @@ func get_response() -> void:
 	$HTTPRequest.request(url)
 
 func _on_request_completed(_result, _response_code, _headers, body) -> void:
-	if not body:
-		return
 	var json: Dictionary = JSON.parse_string(body.get_string_from_utf8())
 	if json["candidates"][0].get("content", ""):
 		employee_message = json["candidates"][0]["content"]["parts"][0]["text"].replace("\n", "")
