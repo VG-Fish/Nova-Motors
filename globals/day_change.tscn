@@ -2,16 +2,15 @@
 
 [ext_resource type="Script" path="res://globals/day_change.gd" id="1_cnpri"]
 
-[node name="Control" type="Control"]
-z_index = 100
-layout_mode = 3
-anchors_preset = 0
-mouse_filter = 2
+[node name="CanvasLayer" type="CanvasLayer"]
 script = ExtResource("1_cnpri")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="ColorRect" type="ColorRect" parent="."]
 modulate = Color(0, 0, 0, 0)
-layout_mode = 0
-offset_right = 1440.0
-offset_bottom = 800.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 mouse_filter = 2
+color = Color(0, 0, 0, 1)

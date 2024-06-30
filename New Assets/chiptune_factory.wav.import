@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cg1k6gpcdyb5l"
+path="res://.godot/imported/chiptune_factory.wav-2edd966d58e6ec66675bd7218b9e8988.sample"
+
+[deps]
+
+source_file="res://New Assets/chiptune_factory.wav"
+dest_files=["res://.godot/imported/chiptune_factory.wav-2edd966d58e6ec66675bd7218b9e8988.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
